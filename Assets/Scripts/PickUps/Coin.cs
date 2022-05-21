@@ -1,21 +1,11 @@
 using UnityEngine;
 
-public class Coin : MonoBehaviour
+public class Coin : PickUp
 {
     [SerializeField] private int coinValue;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected override void PickUpAction(Player player)
     {
-        if (collision.TryGetComponent(out Player player))
-        {
-            player.ChangeCoinCount(coinValue);
-        }
-
-        Die();
-    }
-
-    private void Die()
-    {
-        gameObject.SetActive(false);
+        player.ChangeCoinCount(coinValue);
     }
 }

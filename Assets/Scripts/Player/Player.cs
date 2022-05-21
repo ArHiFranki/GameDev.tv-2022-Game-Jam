@@ -6,7 +6,6 @@ using UnityEngine.Events;
 [RequireComponent(typeof(SpriteRenderer), typeof(Animator))]
 public class Player : MonoBehaviour
 {
-    [SerializeField] private int currentHealth;
     [SerializeField] private int maxHealth;
     [SerializeField] private int coinCount = 0;
     [SerializeField] private float powerUpLenght;
@@ -19,6 +18,7 @@ public class Player : MonoBehaviour
 
     private const string powerUpAnimationTrigger = "isPowerUp";
     private const string moveAnimationSpeed = "moveSpeed";
+    private int currentHealth;
     private bool isDead;
     private SpriteRenderer spriteRenderer;
     private Animator playerAnimator;

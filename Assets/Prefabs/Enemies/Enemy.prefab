@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1566843823}
   - component: {fileID: 686861991756318969}
   - component: {fileID: 1358348313679218383}
-  - component: {fileID: 7355223553005359457}
+  - component: {fileID: 5368030210877021968}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -30,9 +30,10 @@ Transform:
   m_GameObject: {fileID: 4243446934813239840}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1278741962649269702}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -77,8 +78,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0.36335707, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 753eb1734df370a45a8d3d8d76d985c5, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -113,10 +114,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07b6bc1a02632e147b6eb2365544b1a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  dieFX: {fileID: 0}
-  enemySprite: {fileID: 0}
-  enemyCollider: {fileID: 0}
+  damage: 1
+  dieFX: {fileID: 1278741962634054100}
+  enemySprite: {fileID: 4243446934813239841}
+  enemyCollider: {fileID: 5368030210877021968}
 --- !u!50 &1358348313679218383
 Rigidbody2D:
   serializedVersion: 4
@@ -138,7 +139,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &7355223553005359457
+--- !u!60 &5368030210877021968
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,7 +156,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2.12, y: 1.8}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -163,7 +164,96 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.5, y: 0.5}
-      - {x: -0.5, y: -0.5}
-      - {x: 0.5, y: -0.5}
-      - {x: 0.5, y: 0.5}
+    - - {x: 1, y: -0.69}
+      - {x: 1.06, y: -0.53}
+      - {x: 1.06, y: -0.099999994}
+      - {x: 0.96, y: 0.28}
+      - {x: 0.85999995, y: 0.47}
+      - {x: 0.76, y: 0.62}
+      - {x: 0.61, y: 0.77}
+      - {x: 0.53, y: 0.81}
+      - {x: 0.42999998, y: 0.84999996}
+      - {x: 0.19, y: 0.89}
+      - {x: 0.03, y: 0.9}
+      - {x: -0.25, y: 0.88}
+      - {x: -0.39999998, y: 0.84}
+      - {x: -0.5, y: 0.78}
+      - {x: -0.68, y: 0.65}
+      - {x: -0.78999996, y: 0.52}
+      - {x: -0.91999996, y: 0.29999998}
+      - {x: -1, y: 0.14}
+      - {x: -1.06, y: -0.08}
+      - {x: -1.06, y: -0.53999996}
+      - {x: -1.02, y: -0.65999997}
+      - {x: -0.98999995, y: -0.74}
+      - {x: -0.79999995, y: -0.9}
+      - {x: 0.68, y: -0.9}
+      - {x: 0.78, y: -0.88}
+      - {x: 0.91999996, y: -0.78999996}
+--- !u!1001 &1278741962649678070
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4243446934813239854}
+    m_Modifications:
+    - target: {fileID: 153256, guid: 258b7fecbfcad1441b3b7ee34b27111b, type: 3}
+      propertyPath: m_Name
+      value: SmokeFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 443696, guid: 258b7fecbfcad1441b3b7ee34b27111b, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 443696, guid: 258b7fecbfcad1441b3b7ee34b27111b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 443696, guid: 258b7fecbfcad1441b3b7ee34b27111b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 443696, guid: 258b7fecbfcad1441b3b7ee34b27111b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 443696, guid: 258b7fecbfcad1441b3b7ee34b27111b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 443696, guid: 258b7fecbfcad1441b3b7ee34b27111b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 443696, guid: 258b7fecbfcad1441b3b7ee34b27111b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 443696, guid: 258b7fecbfcad1441b3b7ee34b27111b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 443696, guid: 258b7fecbfcad1441b3b7ee34b27111b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 443696, guid: 258b7fecbfcad1441b3b7ee34b27111b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 443696, guid: 258b7fecbfcad1441b3b7ee34b27111b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 258b7fecbfcad1441b3b7ee34b27111b, type: 3}
+--- !u!198 &1278741962634054100 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 19855650, guid: 258b7fecbfcad1441b3b7ee34b27111b, type: 3}
+  m_PrefabInstance: {fileID: 1278741962649678070}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1278741962649269702 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 443696, guid: 258b7fecbfcad1441b3b7ee34b27111b, type: 3}
+  m_PrefabInstance: {fileID: 1278741962649678070}
+  m_PrefabAsset: {fileID: 0}

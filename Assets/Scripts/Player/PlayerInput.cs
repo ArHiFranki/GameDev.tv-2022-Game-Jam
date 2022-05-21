@@ -28,7 +28,7 @@ public class PlayerInput : MonoBehaviour
     {
         if (value.isPressed)
         {
-            Debug.Log("Jump Pressed");
+            jumpController.Jump();
         }
     }
 
@@ -36,7 +36,7 @@ public class PlayerInput : MonoBehaviour
     {
         if (value.isPressed)
         {
-            Debug.Log("Fire Pressed");
+            fireController.Fire();
         }
     }
 }

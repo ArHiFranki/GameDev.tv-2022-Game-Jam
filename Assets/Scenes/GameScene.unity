@@ -355,18 +355,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6028723171029707847, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
-      propertyPath: maxHeight
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6028723171029707847, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
-      propertyPath: minHeight
-      value: -3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6028723171029707847, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
-      propertyPath: moveSpeed
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 7266401478958753153, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
       propertyPath: m_RootOrder
       value: 2

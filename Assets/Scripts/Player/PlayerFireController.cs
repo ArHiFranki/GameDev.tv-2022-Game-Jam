@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class PlayerFireController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void Fire()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log("Fire Pressed");
     }
 }

@@ -5,6 +5,8 @@ public class PlayerMoveController : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float maxHeight;
     [SerializeField] private float minHeight;
+    [SerializeField] private float maxWidth;
+    [SerializeField] private float minWidth;
 
     private Vector2 playerMoveInput;
 
@@ -22,6 +24,8 @@ public class PlayerMoveController : MonoBehaviour
     {
         Vector3 deltaPosition = playerMoveInput * moveSpeed * Time.deltaTime;
         Vector3 newPosition = transform.position + deltaPosition;
+
+        newPosition.x = Mathf.Clamp(newPosition.x, minWidth, maxWidth);
         newPosition.y = Mathf.Clamp(newPosition.y, minHeight, maxHeight);
 
         transform.position = newPosition;

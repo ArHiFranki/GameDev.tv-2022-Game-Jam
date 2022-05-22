@@ -139,13 +139,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 3
   coinCount: 0
-  powerUpLenght: 0
   isPowerUp: 0
   defaultSprite: {fileID: 21300000, guid: ec2390ad8858d0f4aa9b7d861aff5d4f, type: 3}
   powerUpSprite: {fileID: 21300000, guid: c3dba0a8d9532d74699cffe5414cf54f, type: 3}
   starHitFX: {fileID: 6019855453727924842}
   powerUpWindFX: {fileID: 489371905187732931}
   soundController: {fileID: 0}
+  currentHealth: 0
 --- !u!114 &15416230234428406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,6 +173,8 @@ MonoBehaviour:
   moveSpeed: 5
   maxHeight: 1
   minHeight: -3
+  maxWidth: 0
+  minWidth: 0
 --- !u!114 &5412052997484893141
 MonoBehaviour:
   m_ObjectHideFlags: 0

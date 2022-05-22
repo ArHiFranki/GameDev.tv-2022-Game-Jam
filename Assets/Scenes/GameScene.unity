@@ -348,7 +348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4243446934813239840, guid: 17196a9dcf483c64faa91548b96ec8da, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4243446934813239854, guid: 17196a9dcf483c64faa91548b96ec8da, type: 3}
       propertyPath: m_RootOrder
@@ -411,6 +411,10 @@ PrefabInstance:
       propertyPath: soundController
       value: 
       objectReference: {fileID: 1957556605}
+    - target: {fileID: 6028723171029707847, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
+      propertyPath: minWidth
+      value: -7
+      objectReference: {fileID: 0}
     - target: {fileID: 7266401478958753153, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
       propertyPath: m_RootOrder
       value: 2

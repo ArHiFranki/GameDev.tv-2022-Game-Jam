@@ -1,21 +1,38 @@
 using UnityEngine;
+using UnityEngine.UI;
 
-[RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(RawImage))]
 public class Parallax : MonoBehaviour
 {
-    [SerializeField] private Vector2 scrollSpeed;
+    [SerializeField] private float scrollSpeed;
 
-    private Vector2 offset;
-    private Material material;
+    private RawImage image;
+    private float imageUVPositionX;
 
     private void Awake()
     {
-        material = GetComponent<SpriteRenderer>().material;
+        image = GetComponent<RawImage>();
+    }
+
+    private void Start()
+    {
+        imageUVPositionX = image.uvRect.x;
     }
 
     private void Update()
     {
-        offset = scrollSpeed * Time.deltaTime;
-        material.mainTextureOffset += offset;
+        ScrollImage();
+    }
+
+    private void ScrollImage()
+    {
+        imageUVPositionX += scrollSpeed * Time.deltaTime;
+
+        if (imageUVPositionX > 1)
+        {
+            imageUVPositionX = 0;
+        }
+
+        image.uvRect = new Rect(imageUVPositionX, 0, image.uvRect.width, image.uvRect.height);
     }
 }

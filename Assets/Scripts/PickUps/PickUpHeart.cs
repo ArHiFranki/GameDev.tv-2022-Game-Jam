@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class PickUpHeart : PickUp
 {
-    [SerializeField] private int hpValue;
+    [SerializeField] private int hpRecoverValue;
 
     protected override void PickUpAction(Player player)
     {
-        player.HealthUp(hpValue);
+        player.HealthUp(hpRecoverValue);
     }
 }

@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
 
     private const string powerUpAnimationTrigger = "isPowerUp";
     private const string moveAnimationSpeed = "moveSpeed";
-    [SerializeField] private int currentHealth;
+    private int currentHealth;
     private bool isDead;
     private SpriteRenderer spriteRenderer;
     private Animator playerAnimator;

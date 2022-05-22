@@ -9,7 +9,6 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private int maxHealth;
     [SerializeField] private int coinCount = 0;
-    [SerializeField] private float powerUpLenght;
     [SerializeField] private bool isPowerUp;
     [SerializeField] Sprite defaultSprite;
     [SerializeField] Sprite powerUpSprite;
@@ -37,21 +36,20 @@ public class Player : MonoBehaviour
     public bool IsPowerUp => isPowerUp;
     public bool IsDead => isDead;
 
-    private void Start()
+    private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         playerAnimator = GetComponent<Animator>();
+    }
 
-        currentHealth = maxHealth;
-        spriteRenderer.sprite = defaultSprite;
-        HealthChanged?.Invoke(currentHealth);
-        isPowerUp = false;
-        isDead = false;
-        powerUpWindFX.Stop();
+    private void Start()
+    {
+        SetInitialCondition();
     }
 
     private void FixedUpdate()
     {
+        // ToDo: проверить работу условия, выделить в отдельный метод
         if (isPowerUp && (Time.time >= endPowerUpTime))
         {
             isPowerUp = false;
@@ -61,6 +59,16 @@ public class Player : MonoBehaviour
             playerAnimator.SetFloat(moveAnimationSpeed, 1f);
             powerUpWindFX.Stop();
         }
+    }
+
+    private void SetInitialCondition()
+    {
+        currentHealth = maxHealth;
+        isPowerUp = false;
+        isDead = false;
+        spriteRenderer.sprite = defaultSprite;
+        HealthChanged?.Invoke(currentHealth);
+        powerUpWindFX.Stop();
     }
 
     public void ApplyDamage(int damage)
@@ -113,9 +121,9 @@ public class Player : MonoBehaviour
         soundController.PlayCoinUpSound();
     }
 
-    public void GetPowerUp()
+    public void GetPowerUp(float powerUpDuration)
     {
-        endPowerUpTime = Time.time + powerUpLenght;
+        endPowerUpTime = Time.time + powerUpDuration;
         isPowerUp = true;
         PowerUp?.Invoke();
         spriteRenderer.sprite = powerUpSprite;

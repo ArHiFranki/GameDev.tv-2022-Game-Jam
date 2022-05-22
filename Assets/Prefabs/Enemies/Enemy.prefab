@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4243446934813239841}
   - component: {fileID: 1566843823}
   - component: {fileID: 686861991756318969}
+  - component: {fileID: -3447639235382033774}
   - component: {fileID: 1358348313679218383}
   - component: {fileID: 5368030210877021968}
   m_Layer: 0
@@ -118,6 +119,18 @@ MonoBehaviour:
   dieFX: {fileID: 1278741962634054100}
   enemySprite: {fileID: 4243446934813239841}
   enemyCollider: {fileID: 5368030210877021968}
+--- !u!114 &-3447639235382033774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4243446934813239840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8685fa0f44c930b44ae56149ea6faf86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &1358348313679218383
 Rigidbody2D:
   serializedVersion: 4

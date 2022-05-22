@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1813382607203406910}
   - component: {fileID: 1813382607203406909}
   - component: {fileID: 1813382607203406911}
+  - component: {fileID: -6710382592911700119}
   - component: {fileID: 1813382607203406905}
   - component: {fileID: 1813382607203406904}
   m_Layer: 0
@@ -115,6 +116,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpRecoverValue: 1
+--- !u!114 &-6710382592911700119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813382607203406899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8685fa0f44c930b44ae56149ea6faf86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &1813382607203406905
 Rigidbody2D:
   serializedVersion: 4

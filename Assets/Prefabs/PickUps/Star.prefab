@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8735590465302509455}
   - component: {fileID: 8735590465302509452}
   - component: {fileID: 8735590465302509453}
+  - component: {fileID: 4107746839509905581}
   - component: {fileID: 8735590465302509440}
   m_Layer: 0
   m_Name: Star
@@ -163,6 +164,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puwerUpDuration: 7
+--- !u!114 &4107746839509905581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8735590465302509451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8685fa0f44c930b44ae56149ea6faf86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &8735590465302509440
 Animator:
   serializedVersion: 4

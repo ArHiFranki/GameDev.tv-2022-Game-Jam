@@ -19,7 +19,6 @@ public class DisplayCoin : MonoBehaviour
     private void Start()
     {
         coinCountText.text = "" + 0;
-        OnCoinChanged(player.CoinCount);
     }
 
     private void OnCoinChanged(int coinCount)

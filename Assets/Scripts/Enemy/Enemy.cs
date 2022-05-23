@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour
         enemySprite.enabled = false;
         enemyCollider.enabled = false;
         dieFX.Play();
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(dieFX.main.duration);
         gameObject.SetActive(false);
         enemySprite.enabled = true;
         enemyCollider.enabled = true;

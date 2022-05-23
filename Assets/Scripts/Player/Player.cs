@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -19,22 +17,22 @@ public class Player : MonoBehaviour
     private const string powerUpAnimationTrigger = "isPowerUp";
     private const string moveAnimationSpeed = "moveSpeed";
     private int currentHealth;
+    private float endPowerUpTime;
     private bool isDead;
     private SpriteRenderer spriteRenderer;
     private Animator playerAnimator;
 
-    private float endPowerUpTime;
+    public int Health => currentHealth;
+    public int MaxHealth => maxHealth;
+    public int CoinCount => coinCount;
+    public bool IsPowerUp => isPowerUp;
+    public bool IsDead => isDead;
 
     public event UnityAction<int> HealthChanged;
     public event UnityAction<int> CoinChanged;
     public event UnityAction Died;
     public event UnityAction PowerUp;
     public event UnityAction PowerDown;
-    public int Health => currentHealth;
-    public int MaxHealth => maxHealth;
-    public int CoinCount => coinCount;
-    public bool IsPowerUp => isPowerUp;
-    public bool IsDead => isDead;
 
     private void Awake()
     {

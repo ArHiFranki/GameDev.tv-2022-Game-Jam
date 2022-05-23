@@ -15,5 +15,3 @@ MonoBehaviour:
   subWaves:
   - objectPrefab: {fileID: -8741734520417635944, guid: 5dbef708740b23544a546dc1d856680a, type: 3}
     objectCount: 3
-  - objectPrefab: {fileID: -3447639235382033774, guid: 17196a9dcf483c64faa91548b96ec8da, type: 3}
-    objectCount: 2

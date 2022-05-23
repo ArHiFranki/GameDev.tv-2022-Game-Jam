@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ObjectMover : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed;
+    private SpeedController speedController;
 
     private void Update()
     {
@@ -11,6 +11,11 @@ public class ObjectMover : MonoBehaviour
 
     private void MoveObject()
     {
-        transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+        transform.Translate(Vector3.left * speedController.CurrentSpeed * Time.deltaTime);
+    }
+
+    public void InitSpeedController(SpeedController speedController)
+    {
+        this.speedController = speedController;
     }
 }

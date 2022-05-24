@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ObjectMover : MonoBehaviour
 {
-    [SerializeField] private SpeedController mySpeedController;
+    private SpeedController mySpeedController;
 
     private void Update()
     {

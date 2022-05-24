@@ -1213,6 +1213,25 @@ MonoBehaviour:
   waveConfigs:
   - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
   - {fileID: 11400000, guid: 66c12deea66219a478a092660c84f3b4, type: 2}
+  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
+  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
+  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
+  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
+  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
+  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
+  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
+  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
+  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
+  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
+  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
+  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
+  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
+  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
+  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
+  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
+  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
+  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
+  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
 --- !u!1 &1408897477
 GameObject:
   m_ObjectHideFlags: 0

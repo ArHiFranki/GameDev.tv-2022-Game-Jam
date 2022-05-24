@@ -31,13 +31,12 @@ public class Enemy : MonoBehaviour
         enemyCollider.enabled = false;
         dieFX.Play();
         yield return new WaitForSeconds(dieFX.main.duration);
-        gameObject.SetActive(false);
-        enemySprite.enabled = true;
-        enemyCollider.enabled = true;
+        Die();
     }
 
     private void Die()
     {
         gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 }

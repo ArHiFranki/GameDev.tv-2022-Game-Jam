@@ -17,5 +17,6 @@ public abstract class PickUp : MonoBehaviour
     private void Die()
     {
         gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 }

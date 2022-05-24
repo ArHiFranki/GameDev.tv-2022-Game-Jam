@@ -1213,25 +1213,7 @@ MonoBehaviour:
   waveConfigs:
   - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
   - {fileID: 11400000, guid: 66c12deea66219a478a092660c84f3b4, type: 2}
-  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
-  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
-  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
-  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
-  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
-  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
-  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
-  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
-  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
-  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
-  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
-  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
-  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
-  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
-  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
-  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
-  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
-  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
-  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
+  - {fileID: 11400000, guid: 8822d353bf2aea041a7c8fa5ef25854a, type: 2}
 --- !u!1 &1408897477
 GameObject:
   m_ObjectHideFlags: 0
@@ -1951,6 +1933,10 @@ PrefabInstance:
       propertyPath: soundController
       value: 
       objectReference: {fileID: 1957556605}
+    - target: {fileID: 6028723171029707847, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
+      propertyPath: maxWidth
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7266401478958753153, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
       propertyPath: m_RootOrder
       value: 1

@@ -130,4 +130,9 @@ public class Player : MonoBehaviour
         powerUpWindFX.Play();
         soundController.PlayPowerUpSound();
     }
+
+    public void SetWinCondition()
+    {
+        Debug.Log("You Win!");
+    }
 }

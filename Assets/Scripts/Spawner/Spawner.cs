@@ -12,6 +12,7 @@ public class Spawner : MonoBehaviour
 
     private List<SpawnObject> spawnObjects = new List<SpawnObject>();
     private int currentLevel;
+    private int spawnPointNumber;
     private float currentSpawnRate;
     private int[] previousPoints = new int[4];
 
@@ -46,7 +47,7 @@ public class Spawner : MonoBehaviour
             ShuffleSpawnObjects();
             for (int i = 0; i < spawnObjects.Count; i++)
             {
-                int spawnPointNumber = GenerateSpawnPointNumber();
+                spawnPointNumber = GenerateSpawnPointNumber();
                 Instantiate(spawnObjects[i], spawnPoints[spawnPointNumber].position, Quaternion.identity, transform);
                 spawnObjects[i].GetComponent<ObjectMover>().InitSpeedController(speedController);
                 yield return new WaitForSeconds(currentSpawnRate);

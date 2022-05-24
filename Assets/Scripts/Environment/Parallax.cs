@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class Parallax : MonoBehaviour
 {
     [SerializeField] private float scrollSpeed;
+    [SerializeField] private SpeedController speedController;
 
     private RawImage image;
     private float imageUVPositionX;
@@ -26,7 +27,7 @@ public class Parallax : MonoBehaviour
 
     private void ScrollImage()
     {
-        imageUVPositionX += scrollSpeed * Time.deltaTime;
+        imageUVPositionX += speedController.CurrentSpeed * scrollSpeed * Time.deltaTime;
 
         if (imageUVPositionX > 1)
         {

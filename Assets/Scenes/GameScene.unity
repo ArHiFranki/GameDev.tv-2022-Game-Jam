@@ -569,6 +569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 0.005
+  speedController: {fileID: 862243458}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,6 +816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 0.02
+  speedController: {fileID: 862243458}
 --- !u!114 &636168818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1121,6 +1123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 0.05
+  speedController: {fileID: 862243458}
 --- !u!114 &1282108938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1509,6 +1512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 0.07
+  speedController: {fileID: 862243458}
 --- !u!114 &1754131686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1607,6 +1611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 0.01
+  speedController: {fileID: 862243458}
 --- !u!114 &1861999024
 MonoBehaviour:
   m_ObjectHideFlags: 0

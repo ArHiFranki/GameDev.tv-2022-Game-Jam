@@ -7,9 +7,12 @@ public abstract class PickUp : MonoBehaviour
         if (collision.TryGetComponent(out Player player))
         {
             PickUpAction(player);
+            Die();
         }
-
-        Die();
+        else if (collision.TryGetComponent(out ObjectDestroyer objectDestroyer))
+        {
+            Die();
+        }
     }
 
     protected abstract void PickUpAction(Player player);

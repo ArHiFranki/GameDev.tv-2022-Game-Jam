@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private int damage;
+    [SerializeField] private int enemyHealth;
     [SerializeField] private ParticleSystem dieFX;
     [SerializeField] private SpriteRenderer enemySprite;
     [SerializeField] private PolygonCollider2D enemyCollider;
@@ -19,9 +20,19 @@ public class Enemy : MonoBehaviour
                 StartCoroutine(DieCoroutine());
             }
         }
-        else
+        else if (collision.TryGetComponent(out ObjectDestroyer objectDestroyer))
         {
             Die();
+        }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        enemyHealth -= damage;
+
+        if (enemyHealth <= 0)
+        {
+            StartCoroutine(DieCoroutine());
         }
     }
 

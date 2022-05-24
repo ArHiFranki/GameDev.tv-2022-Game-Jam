@@ -106,6 +106,7 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
+        Debug.Log("You Die");
         isDead = true;
         Died?.Invoke();
         soundController.StopBackgroundMusic();

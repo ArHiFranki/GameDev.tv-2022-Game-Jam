@@ -1,14 +1,17 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private int damage;
     [SerializeField] private int enemyHealth;
+    [SerializeField] private int reward;
     [SerializeField] private ParticleSystem dieFX;
     [SerializeField] private SpriteRenderer enemySprite;
     [SerializeField] private PolygonCollider2D enemyCollider;
+
+    private ScoreKeeper myScoreKeeper;
+    private bool isRewardReceived = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -33,6 +36,12 @@ public class Enemy : MonoBehaviour
         if (enemyHealth <= 0)
         {
             StartCoroutine(DieCoroutine());
+
+            if(!isRewardReceived)
+            {
+                myScoreKeeper.ModifyCoinCount(reward);
+                isRewardReceived = true;
+            }
         }
     }
 
@@ -49,5 +58,10 @@ public class Enemy : MonoBehaviour
     {
         gameObject.SetActive(false);
         Destroy(gameObject);
+    }
+
+    public void InitScoreKeeper(ScoreKeeper scoreKeeper)
+    {
+        myScoreKeeper = scoreKeeper;
     }
 }

@@ -6,7 +6,6 @@ using UnityEngine.Events;
 public class Player : MonoBehaviour
 {
     [SerializeField] private int maxHealth;
-    [SerializeField] private int coinCount = 0;
     [SerializeField] private bool isPowerUp;
     [SerializeField] Sprite defaultSprite;
     [SerializeField] Sprite powerUpSprite;
@@ -22,14 +21,10 @@ public class Player : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Animator playerAnimator;
 
-    public int Health => currentHealth;
-    public int MaxHealth => maxHealth;
-    public int CoinCount => coinCount;
     public bool IsPowerUp => isPowerUp;
     public bool IsDead => isDead;
 
     public event UnityAction<int> HealthChanged;
-    public event UnityAction<int> CoinChanged;
     public event UnityAction Died;
     public event UnityAction PowerUp;
     public event UnityAction PowerDown;
@@ -113,10 +108,8 @@ public class Player : MonoBehaviour
         soundController.PlayGameOverSound();
     }
 
-    public void ChangeCoinCount(int coinValue)
+    public void PickUpCoin()
     {
-        coinCount += coinValue;
-        CoinChanged?.Invoke(coinCount);
         soundController.PlayCoinUpSound();
     }
 

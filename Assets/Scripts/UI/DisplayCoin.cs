@@ -3,17 +3,17 @@ using TMPro;
 
 public class DisplayCoin : MonoBehaviour
 {
-    [SerializeField] private Player player;
+    [SerializeField] private ScoreKeeper scoreKeeper;
     [SerializeField] private TMP_Text coinCountText;
 
     private void OnEnable()
     {
-        player.CoinChanged += OnCoinChanged;
+        scoreKeeper.CoinChanged += OnCoinChanged;
     }
 
     private void OnDisable()
     {
-        player.CoinChanged -= OnCoinChanged;
+        scoreKeeper.CoinChanged -= OnCoinChanged;
     }
 
     private void Start()

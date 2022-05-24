@@ -7,6 +7,7 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] private float distanceBetweenObjects;
     [SerializeField] private SpeedController speedController;
+    [SerializeField] private ScoreKeeper scoreKeeper;
     [SerializeField] private List<Transform> spawnPoints;
     [SerializeField] private List<WaveConfigSO> waveConfigs;
 
@@ -50,8 +51,20 @@ public class Spawner : MonoBehaviour
             {
                 spawnPointNumber = GenerateSpawnPointNumber();
                 spawnPointPosition = spawnPoints[spawnPointNumber].position;
+
                 SpawnObject spawned = Instantiate(spawnObjects[i], spawnPointPosition, Quaternion.identity, transform);
                 spawned.GetComponent<ObjectMover>().InitSpeedController(speedController);
+
+                if (spawned.TryGetComponent(out Enemy enemy))
+                {
+                    enemy.InitScoreKeeper(scoreKeeper);
+                }
+
+                if (spawned.TryGetComponent(out Coin coin))
+                {
+                    coin.InitScoreKeeper(scoreKeeper);
+                }
+
                 yield return new WaitForSeconds(currentSpawnRate);
             }
         }

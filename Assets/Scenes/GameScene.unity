@@ -2014,7 +2014,35 @@ PrefabInstance:
       objectReference: {fileID: 4930546797524319195, guid: bd543738528873c408db8146731a9d31, type: 3}
     - target: {fileID: 8637912647498677594, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
       propertyPath: deltaRotation
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637912647498677594, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
+      propertyPath: deltaRotation1
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637912647498677594, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
+      propertyPath: deltaRotation2
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637912647498677594, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
+      propertyPath: firstDeltaRotation
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637912647498677594, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
+      propertyPath: delayBetweenBullets
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637912647498677594, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
+      propertyPath: firstBulletRotation
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637912647498677594, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
+      propertyPath: secondDeltaRotation
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637912647498677594, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
+      propertyPath: secondBulletRotation
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 8837105263442579610, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
       propertyPath: m_Icon

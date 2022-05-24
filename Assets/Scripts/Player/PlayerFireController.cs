@@ -5,9 +5,11 @@ public class PlayerFireController : MonoBehaviour
     [SerializeField] private Transform firePoint;
     [SerializeField] private Bullet bulletPrefab;
     [SerializeField] private float fireRate;
-    [SerializeField] private float deltaRotation;
+    [SerializeField] private float firstBulletRotation;
+    [SerializeField] private float secondBulletRotation;
 
     private float timeAfterLastShoot;
+    private float tmpAngle;
 
     private void Start()
     {
@@ -23,11 +25,15 @@ public class PlayerFireController : MonoBehaviour
     {
         if (timeAfterLastShoot >= fireRate)
         {
-            float tmpAngle = firePoint.rotation.eulerAngles.z - deltaRotation;
+            tmpAngle = firePoint.rotation.eulerAngles.z - firstBulletRotation;
             Instantiate(bulletPrefab, firePoint.position, Quaternion.Euler(0f, 0f, tmpAngle));
-            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-            tmpAngle = firePoint.rotation.eulerAngles.z + deltaRotation;
+            tmpAngle = firePoint.rotation.eulerAngles.z + firstBulletRotation;
             Instantiate(bulletPrefab, firePoint.position, Quaternion.Euler(0f, 0f, tmpAngle));
+            tmpAngle = firePoint.rotation.eulerAngles.z - secondBulletRotation;
+            Instantiate(bulletPrefab, firePoint.position, Quaternion.Euler(0f, 0f, tmpAngle));
+            tmpAngle = firePoint.rotation.eulerAngles.z + secondBulletRotation;
+            Instantiate(bulletPrefab, firePoint.position, Quaternion.Euler(0f, 0f, tmpAngle));
+
             timeAfterLastShoot = 0;
         }
     }

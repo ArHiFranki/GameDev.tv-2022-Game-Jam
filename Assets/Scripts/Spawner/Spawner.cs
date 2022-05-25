@@ -130,8 +130,8 @@ public class Spawner : MonoBehaviour
     {
         currentSpawnRate = distanceBetweenObjects / speedController.CurrentSpeed;
 
-        Debug.Log("Level: " + currentLevel +
-                  "   Speed: " + speedController.CurrentSpeed +
-                  "   SpawnRate: " + currentSpawnRate);
+        //Debug.Log("Level: " + currentLevel +
+        //          "   Speed: " + speedController.CurrentSpeed +
+        //          "   SpawnRate: " + currentSpawnRate);
     }
 }

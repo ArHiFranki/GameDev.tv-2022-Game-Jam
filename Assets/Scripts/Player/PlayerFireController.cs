@@ -7,9 +7,12 @@ public class PlayerFireController : MonoBehaviour
     [SerializeField] private float fireRate;
     [SerializeField] private float firstBulletRotation;
     [SerializeField] private float secondBulletRotation;
+    [SerializeField] private Animator playerAnimator;
 
     private float timeAfterLastShoot;
     private float tmpAngle;
+
+    private const string fireAnimationTrigger = "Fire";
 
     private void Start()
     {
@@ -35,6 +38,7 @@ public class PlayerFireController : MonoBehaviour
             Instantiate(bulletPrefab, firePoint.position, Quaternion.Euler(0f, 0f, tmpAngle));
 
             timeAfterLastShoot = 0;
+            playerAnimator.SetTrigger(fireAnimationTrigger);
         }
     }
 }

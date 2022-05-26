@@ -1989,6 +1989,10 @@ PrefabInstance:
       propertyPath: soundController
       value: 
       objectReference: {fileID: 1957556605}
+    - target: {fileID: 6459306300126005491, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7266401478958753153, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2036,6 +2040,10 @@ PrefabInstance:
     - target: {fileID: 7266401478958753155, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637912647498677594, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
+      propertyPath: fireRate
+      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}

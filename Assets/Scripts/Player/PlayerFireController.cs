@@ -4,6 +4,7 @@ public class PlayerFireController : MonoBehaviour
 {
     [SerializeField] private Transform firePoint;
     [SerializeField] private Bullet bulletPrefab;
+    [SerializeField] private ParticleSystem fireFX;
     [SerializeField] private float fireRate;
     [SerializeField] private float firstBulletRotation;
     [SerializeField] private float secondBulletRotation;
@@ -39,6 +40,7 @@ public class PlayerFireController : MonoBehaviour
 
             timeAfterLastShoot = 0;
             playerAnimator.SetTrigger(fireAnimationTrigger);
+            fireFX.Play();
         }
     }
 }

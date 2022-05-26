@@ -130,4 +130,14 @@ public class Player : MonoBehaviour
     {
         Debug.Log("You Win!");
     }
+
+    public void EnableWeapon()
+    {
+        Debug.Log("EnableWeapon");
+    }
+
+    public void DisableWeapon()
+    {
+        Debug.Log("DisableWeapon");
+    }
 }

@@ -1989,6 +1989,18 @@ PrefabInstance:
       propertyPath: soundController
       value: 
       objectReference: {fileID: 1957556605}
+    - target: {fileID: 3701589676063667636, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 23dfdb93e18a4654e8a6f15226baa78e, type: 3}
+    - target: {fileID: 3701589676063667636, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7266401477420580813, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a67e337e5fc24af478bb0bd394559ac5, type: 3}
     - target: {fileID: 7266401478958753153, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
       propertyPath: m_RootOrder
       value: 1

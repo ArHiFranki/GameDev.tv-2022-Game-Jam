@@ -13,22 +13,17 @@ public class Player : MonoBehaviour
     [SerializeField] ParticleSystem starHitFX;
     [SerializeField] ParticleSystem powerUpWindFX;
     [SerializeField] SoundController soundController;
-    [SerializeField] AnimationClip jumpAnimationClip;
-    [SerializeField] PolygonCollider2D playerCollider;
 
     private const string powerUpAnimationTrigger = "isPowerUp";
     private const string moveAnimationSpeed = "moveSpeed";
-    private const string jumpAnimationTrigger = "Jump";
     private int currentHealth;
     private float endPowerUpTime;
     private bool isDead;
-    private bool isJumping;
-    //private SpriteRenderer spriteRenderer;
+    private SpriteRenderer spriteRenderer;
     private Animator playerAnimator;
 
     public bool IsPowerUp => isPowerUp;
     public bool IsDead => isDead;
-    public bool IsJumping => isJumping;
 
     public event UnityAction<int> HealthChanged;
     public event UnityAction Died;
@@ -37,7 +32,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        //spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         playerAnimator = GetComponent<Animator>();
     }
 
@@ -53,7 +48,7 @@ public class Player : MonoBehaviour
         {
             isPowerUp = false;
             PowerDown?.Invoke();
-            //spriteRenderer.sprite = defaultSprite;
+            spriteRenderer.sprite = defaultSprite;
             playerAnimator.SetBool(powerUpAnimationTrigger, false);
             playerAnimator.SetFloat(moveAnimationSpeed, 1f);
             powerUpWindFX.Stop();
@@ -65,7 +60,7 @@ public class Player : MonoBehaviour
         currentHealth = maxHealth;
         isPowerUp = false;
         isDead = false;
-        //spriteRenderer.sprite = defaultSprite;
+        spriteRenderer.sprite = defaultSprite;
         HealthChanged?.Invoke(currentHealth);
         powerUpWindFX.Stop();
     }
@@ -124,7 +119,7 @@ public class Player : MonoBehaviour
         endPowerUpTime = Time.time + powerUpDuration;
         isPowerUp = true;
         PowerUp?.Invoke();
-        //spriteRenderer.sprite = powerUpSprite;
+        spriteRenderer.sprite = powerUpSprite;
         playerAnimator.SetBool(powerUpAnimationTrigger, true);
         playerAnimator.SetFloat(moveAnimationSpeed, 1.5f);
         powerUpWindFX.Play();
@@ -134,22 +129,5 @@ public class Player : MonoBehaviour
     public void SetWinCondition()
     {
         Debug.Log("You Win!");
-    }
-
-    public void PlayerJump()
-    {
-        isJumping = true;
-        playerAnimator.SetTrigger(jumpAnimationTrigger);
-        playerCollider.enabled = false;
-    }
-
-    public void EndOfJumpAnimation(string message)
-    {
-        if (message.Equals("JumpAnimationEnded"))
-        {
-            isJumping = false;
-            playerCollider.enabled = true;
-            Debug.Log("End of jump!");
-        }
     }
 }

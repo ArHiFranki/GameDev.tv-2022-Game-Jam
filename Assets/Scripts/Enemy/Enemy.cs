@@ -15,47 +15,15 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Player player = collision.GetComponentInParent<Player>();
-
-        if(player != null)
+        if (collision.TryGetComponent(out Player player))
         {
-            Debug.Log("Detect collision");
             player.ApplyDamage(damage);
             if (!player.IsDead)
             {
                 StartCoroutine(DieCoroutine());
             }
         }
-
-        //if (collision.TryGetComponent(out Player player))
-        //{
-        //    Debug.Log("Detect collision");
-
-        //    //if (player.IsJumping)
-        //    //{
-        //    //    Debug.Log("Jump over the enemy");
-        //    //}
-        //    //else
-        //    //{
-        //    //    player.ApplyDamage(damage);
-        //    //    if (!player.IsDead)
-        //    //    {
-        //    //        StartCoroutine(DieCoroutine());
-        //    //    }
-        //    //}
-
-        //    player.ApplyDamage(damage);
-        //    if (!player.IsDead)
-        //    {
-        //        StartCoroutine(DieCoroutine());
-        //    }
-        //}
-        //else if (collision.TryGetComponent(out ObjectDestroyer objectDestroyer))
-        //{
-        //    Die();
-        //}
-
-        if (collision.TryGetComponent(out ObjectDestroyer objectDestroyer))
+        else if (collision.TryGetComponent(out ObjectDestroyer objectDestroyer))
         {
             Die();
         }

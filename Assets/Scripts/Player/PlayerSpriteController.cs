@@ -20,7 +20,23 @@ public class PlayerSpriteController : MonoBehaviour
         player = GetComponent<Player>();
     }
 
-    private void FixedUpdate()
+    private void OnEnable()
+    {
+        player.PowerUp += UpdatePlayerSprite;
+        player.PowerDown += UpdatePlayerSprite;
+        player.WeaponOn += UpdatePlayerSprite;
+        player.WeaponOff += UpdatePlayerSprite;
+    }
+
+    private void OnDisable()
+    {
+        player.PowerUp -= UpdatePlayerSprite;
+        player.PowerDown -= UpdatePlayerSprite;
+        player.WeaponOn -= UpdatePlayerSprite;
+        player.WeaponOff -= UpdatePlayerSprite;
+    }
+
+    private void Start()
     {
         UpdatePlayerSprite();
     }

@@ -20,13 +20,15 @@ public class Player : MonoBehaviour
     private Animator playerAnimator;
 
     public bool IsPowerUp => isPowerUp;
-    public bool IsDead => isDead;
     public bool HasWeapon => hasWeapon;
+    public bool IsDead => isDead;
 
     public event UnityAction<int> HealthChanged;
     public event UnityAction Died;
     public event UnityAction PowerUp;
     public event UnityAction PowerDown;
+    public event UnityAction WeaponOn;
+    public event UnityAction WeaponOff;
 
     private void Awake()
     {
@@ -45,7 +47,6 @@ public class Player : MonoBehaviour
         {
             isPowerUp = false;
             PowerDown?.Invoke();
-            //playerSpriteRenderer.sprite = playerNormalSprite;
             playerAnimator.SetBool(powerUpAnimationTrigger, false);
             playerAnimator.SetFloat(moveAnimationSpeed, 1f);
             powerUpWindFX.Stop();
@@ -57,7 +58,6 @@ public class Player : MonoBehaviour
         currentHealth = maxHealth;
         isPowerUp = false;
         isDead = false;
-        //playerSpriteRenderer.sprite = playerNormalSprite;
         HealthChanged?.Invoke(currentHealth);
         powerUpWindFX.Stop();
     }
@@ -116,7 +116,6 @@ public class Player : MonoBehaviour
         endPowerUpTime = Time.time + powerUpDuration;
         isPowerUp = true;
         PowerUp?.Invoke();
-        //playerSpriteRenderer.sprite = playerPowerUpSprite;
         playerAnimator.SetBool(powerUpAnimationTrigger, true);
         playerAnimator.SetFloat(moveAnimationSpeed, 1.5f);
         powerUpWindFX.Play();
@@ -131,10 +130,14 @@ public class Player : MonoBehaviour
     public void EnableWeapon()
     {
         Debug.Log("EnableWeapon");
+        hasWeapon = true;
+        WeaponOn?.Invoke();
     }
 
     public void DisableWeapon()
     {
         Debug.Log("DisableWeapon");
+        hasWeapon = false;
+        WeaponOff?.Invoke();
     }
 }

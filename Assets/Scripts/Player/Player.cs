@@ -2,28 +2,26 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Animator))]
 public class Player : MonoBehaviour
 {
     [SerializeField] private int maxHealth;
     [SerializeField] private bool isPowerUp;
-    [SerializeField] Sprite defaultSprite;
-    [SerializeField] Sprite powerUpSprite;
-    [SerializeField] ParticleSystem starHitFX;
-    [SerializeField] ParticleSystem powerUpWindFX;
-    [SerializeField] SoundController soundController;
+    [SerializeField] private bool hasWeapon;
+    [SerializeField] private ParticleSystem starHitFX;
+    [SerializeField] private ParticleSystem powerUpWindFX;
+    [SerializeField] private SoundController soundController;
 
     private const string powerUpAnimationTrigger = "isPowerUp";
     private const string moveAnimationSpeed = "moveSpeed";
     private int currentHealth;
     private float endPowerUpTime;
     private bool isDead;
-    private SpriteRenderer spriteRenderer;
     private Animator playerAnimator;
 
     public bool IsPowerUp => isPowerUp;
     public bool IsDead => isDead;
+    public bool HasWeapon => hasWeapon;
 
     public event UnityAction<int> HealthChanged;
     public event UnityAction Died;
@@ -32,7 +30,6 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
         playerAnimator = GetComponent<Animator>();
     }
 
@@ -48,7 +45,7 @@ public class Player : MonoBehaviour
         {
             isPowerUp = false;
             PowerDown?.Invoke();
-            spriteRenderer.sprite = defaultSprite;
+            //playerSpriteRenderer.sprite = playerNormalSprite;
             playerAnimator.SetBool(powerUpAnimationTrigger, false);
             playerAnimator.SetFloat(moveAnimationSpeed, 1f);
             powerUpWindFX.Stop();
@@ -60,7 +57,7 @@ public class Player : MonoBehaviour
         currentHealth = maxHealth;
         isPowerUp = false;
         isDead = false;
-        spriteRenderer.sprite = defaultSprite;
+        //playerSpriteRenderer.sprite = playerNormalSprite;
         HealthChanged?.Invoke(currentHealth);
         powerUpWindFX.Stop();
     }
@@ -119,7 +116,7 @@ public class Player : MonoBehaviour
         endPowerUpTime = Time.time + powerUpDuration;
         isPowerUp = true;
         PowerUp?.Invoke();
-        spriteRenderer.sprite = powerUpSprite;
+        //playerSpriteRenderer.sprite = playerPowerUpSprite;
         playerAnimator.SetBool(powerUpAnimationTrigger, true);
         playerAnimator.SetFloat(moveAnimationSpeed, 1.5f);
         powerUpWindFX.Play();

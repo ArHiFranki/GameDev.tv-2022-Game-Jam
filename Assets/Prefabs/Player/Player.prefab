@@ -481,15 +481,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: ebf865a1e8a3b8a4fbb8857e171f39e0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 4.5, y: 1.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1787341687
@@ -800,15 +800,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdae6a98e90282242b4fc0da7c570d55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpriteRenderer: {fileID: 0}
-  shotgunSpriteRenderer: {fileID: 0}
-  handSpriteRenderer: {fileID: 0}
-  playerNormalSprite: {fileID: 0}
-  playerNormalFireSprite: {fileID: 0}
-  playerNormalHand: {fileID: 0}
-  playerPowerUpSprite: {fileID: 0}
-  playerPowerUpFireSprite: {fileID: 0}
-  playerPowerUpHand: {fileID: 0}
+  playerSpriteRenderer: {fileID: 3701589676063667636}
+  shotgunSpriteRenderer: {fileID: 7266401477420580813}
+  handSpriteRenderer: {fileID: 1503737327}
+  playerNormalSprite: {fileID: 21300000, guid: 237a972c4e1e4b24fbf2e0d36e3a6381, type: 3}
+  playerNormalFireSprite: {fileID: 21300000, guid: 23dfdb93e18a4654e8a6f15226baa78e, type: 3}
+  playerNormalHand: {fileID: 21300000, guid: ebf865a1e8a3b8a4fbb8857e171f39e0, type: 3}
+  playerPowerUpSprite: {fileID: 21300000, guid: 78c4c914bb40ac74499d765ed1d48162, type: 3}
+  playerPowerUpFireSprite: {fileID: 21300000, guid: b9307ee3618ebde4993f5826913407ca, type: 3}
+  playerPowerUpHand: {fileID: 21300000, guid: 65bfabcc60741d14fbd3eca063dc5c19, type: 3}
 --- !u!114 &15416230234428406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1036,7 +1036,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: a67e337e5fc24af478bb0bd394559ac5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f2831816ed24afd429fbe285067082c1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -1141,6 +1141,10 @@ PrefabInstance:
     - target: {fileID: 4681753433549648, guid: a4e784029e7600645bfdee827fdd4338, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 198893393215934218, guid: a4e784029e7600645bfdee827fdd4338, type: 3}
+      propertyPath: moveWithTransform
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4e784029e7600645bfdee827fdd4338, type: 3}

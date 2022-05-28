@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Player))]
 public class PlayerFireController : MonoBehaviour
 {
     [SerializeField] private Transform firePoint;
@@ -12,8 +13,14 @@ public class PlayerFireController : MonoBehaviour
 
     private float timeAfterLastShoot;
     private float tmpAngle;
+    private Player player;
 
     private const string fireAnimationTrigger = "Fire";
+
+    private void Awake()
+    {
+        player = GetComponent<Player>();
+    }
 
     private void Start()
     {
@@ -27,7 +34,7 @@ public class PlayerFireController : MonoBehaviour
 
     public void Fire()
     {
-        if (timeAfterLastShoot >= fireRate)
+        if (player.HasWeapon && timeAfterLastShoot >= fireRate)
         {
             tmpAngle = firePoint.rotation.eulerAngles.z - firstBulletRotation;
             Instantiate(bulletPrefab, firePoint.position, Quaternion.Euler(0f, 0f, tmpAngle));

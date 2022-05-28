@@ -146,7 +146,6 @@ public class Player : MonoBehaviour
     public void SpawnLavaPit()
     {
         Debug.Log("Spawn Die Trigger");
-        //SpawnObjectAtTheMiddle(lavaPitPrefab);
         SpawnObject spawned = Instantiate(lavaPitPrefab);
         spawned.GetComponent<ObjectMover>().InitSpeedController(speedController);
     }

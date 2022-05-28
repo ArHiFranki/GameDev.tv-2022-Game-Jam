@@ -22,15 +22,13 @@ public class SpeedController : MonoBehaviour
     private void OnEnable()
     {
         spawner.LevelChange += OnSpeedChange;
-        player.PowerUp += OnSpeedChange;
-        player.PowerDown += OnSpeedChange;
+        player.PowerUpStatusChanged += OnSpeedChange;
     }
 
     private void OnDisable()
     {
         spawner.LevelChange -= OnSpeedChange;
-        player.PowerUp -= OnSpeedChange;
-        player.PowerDown -= OnSpeedChange;
+        player.PowerUpStatusChanged -= OnSpeedChange;
     }
 
     private void OnSpeedChange()

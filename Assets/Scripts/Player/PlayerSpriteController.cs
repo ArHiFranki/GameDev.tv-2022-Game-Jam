@@ -22,18 +22,14 @@ public class PlayerSpriteController : MonoBehaviour
 
     private void OnEnable()
     {
-        player.PowerUp += UpdatePlayerSprite;
-        player.PowerDown += UpdatePlayerSprite;
-        player.WeaponOn += UpdatePlayerSprite;
-        player.WeaponOff += UpdatePlayerSprite;
+        player.PowerUpStatusChanged += UpdatePlayerSprite;
+        player.WeaponStatusChanged += UpdatePlayerSprite;
     }
 
     private void OnDisable()
     {
-        player.PowerUp -= UpdatePlayerSprite;
-        player.PowerDown -= UpdatePlayerSprite;
-        player.WeaponOn -= UpdatePlayerSprite;
-        player.WeaponOff -= UpdatePlayerSprite;
+        player.PowerUpStatusChanged -= UpdatePlayerSprite;
+        player.WeaponStatusChanged -= UpdatePlayerSprite;
     }
 
     private void Start()

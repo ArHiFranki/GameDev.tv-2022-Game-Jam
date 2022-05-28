@@ -11,6 +11,10 @@ public class Player : MonoBehaviour
     [SerializeField] private ParticleSystem starHitFX;
     [SerializeField] private ParticleSystem powerUpWindFX;
     [SerializeField] private SoundController soundController;
+    [SerializeField] private Transform triggersSpawnpoint;
+    [SerializeField] private SpawnObject shotgunPrefab;
+    [SerializeField] private SpawnObject lavaPitPrefab;
+    [SerializeField] private SpeedController speedController;
 
     private const string powerUpAnimationTrigger = "isPowerUp";
     private const string moveAnimationSpeed = "moveSpeed";
@@ -137,5 +141,25 @@ public class Player : MonoBehaviour
         Debug.Log("DisableWeapon");
         hasWeapon = false;
         WeaponStatusChanged?.Invoke();
+    }
+
+    public void SpawnLavaPit()
+    {
+        Debug.Log("Spawn Die Trigger");
+        //SpawnObjectAtTheMiddle(lavaPitPrefab);
+        SpawnObject spawned = Instantiate(lavaPitPrefab);
+        spawned.GetComponent<ObjectMover>().InitSpeedController(speedController);
+    }
+
+    public void SpawnShotgun()
+    {
+        Debug.Log("Spawn Shotgun Trigger");
+        SpawnObjectAtTheMiddle(shotgunPrefab);
+    }
+
+    private void SpawnObjectAtTheMiddle(SpawnObject spawnObject)
+    {
+        SpawnObject spawned = Instantiate(spawnObject, triggersSpawnpoint.position, Quaternion.identity);
+        spawned.GetComponent<ObjectMover>().InitSpeedController(speedController);
     }
 }

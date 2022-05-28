@@ -1,7 +1,7 @@
-public class DieCondition : PickUp
+public class LavaPit : PickUp
 {
     protected override void PickUpAction(Player player)
     {
-        player.SpawnLavaPit();
+        player.Die();
     }
 }

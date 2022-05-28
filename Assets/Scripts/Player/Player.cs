@@ -11,7 +11,6 @@ public class Player : MonoBehaviour
     [SerializeField] private ParticleSystem starHitFX;
     [SerializeField] private ParticleSystem powerUpWindFX;
     [SerializeField] private SoundController soundController;
-    [SerializeField] private Transform triggersSpawnpoint;
     [SerializeField] private SpawnObject middleShotgunPrefab;
     [SerializeField] private SpawnObject lavaPitPrefab;
     [SerializeField] private SpeedController speedController;
@@ -160,7 +159,7 @@ public class Player : MonoBehaviour
 
     private void SpawnObjectAtTheMiddle(SpawnObject spawnObject)
     {
-        SpawnObject spawned = Instantiate(spawnObject, triggersSpawnpoint.position, Quaternion.identity);
-        spawned.GetComponent<ObjectMover>().InitSpeedController(speedController);
+        //SpawnObject spawned = Instantiate(spawnObject, triggersSpawnpoint.position, Quaternion.identity);
+        //spawned.GetComponent<ObjectMover>().InitSpeedController(speedController);
     }
 }

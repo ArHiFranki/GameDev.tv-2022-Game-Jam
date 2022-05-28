@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5638d438578ff744a84d1662b7d8dfc1, type: 3}
-  m_Name: Wave 2
+  m_Name: Shotgun Wave
   m_EditorClassIdentifier: 
   subWaves:
-  - objectPrefab: {fileID: -3447639235382033774, guid: 17196a9dcf483c64faa91548b96ec8da, type: 3}
-    objectCount: 10
+  - objectPrefab: {fileID: 4121858148026685416, guid: f50323a4202d4e04fa0ba95813faf9f6, type: 3}
+    objectCount: 1

@@ -1,7 +1,7 @@
-public class Shotgun : PickUp
+public class DieCondition : PickUp
 {
     protected override void PickUpAction(Player player)
     {
-        player.EnableWeapon();
+        player.Die();
     }
 }

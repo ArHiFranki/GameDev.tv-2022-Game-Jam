@@ -101,7 +101,7 @@ public class Player : MonoBehaviour
         isDead = true;
         Died?.Invoke();
         soundController.StopBackgroundMusic();
-        soundController.PlayGameOverSound();
+        //soundController.PlayGameOverSound();
     }
 
     public void PickUpCoin()

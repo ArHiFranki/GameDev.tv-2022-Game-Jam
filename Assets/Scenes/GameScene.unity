@@ -2037,6 +2037,10 @@ PrefabInstance:
       propertyPath: triggersSpawnpoint
       value: 
       objectReference: {fileID: 1347969082}
+    - target: {fileID: 2455229629015369379, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
+      propertyPath: middleShotgunPrefab
+      value: 
+      objectReference: {fileID: 4540899603610886991, guid: 2b94bb7fd23e7494eade2ba77ea4f76d, type: 3}
     - target: {fileID: 7266401478958753153, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
       propertyPath: m_RootOrder
       value: 1

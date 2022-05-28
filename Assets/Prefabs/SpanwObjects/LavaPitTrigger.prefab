@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6141151085084096787}
   - component: {fileID: 6141151085084096796}
   m_Layer: 0
-  m_Name: DieCondition
+  m_Name: LavaPitTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

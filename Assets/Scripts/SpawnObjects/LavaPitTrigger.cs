@@ -1,4 +1,4 @@
-public class DieCondition : PickUp
+public class LavaPitTrigger : PickUp
 {
     protected override void PickUpAction(Player player)
     {

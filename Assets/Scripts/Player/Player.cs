@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] private ParticleSystem powerUpWindFX;
     [SerializeField] private SoundController soundController;
     [SerializeField] private Transform triggersSpawnpoint;
-    [SerializeField] private SpawnObject shotgunPrefab;
+    [SerializeField] private SpawnObject middleShotgunPrefab;
     [SerializeField] private SpawnObject lavaPitPrefab;
     [SerializeField] private SpeedController speedController;
 
@@ -153,7 +153,9 @@ public class Player : MonoBehaviour
     public void SpawnShotgun()
     {
         Debug.Log("Spawn Shotgun Trigger");
-        SpawnObjectAtTheMiddle(shotgunPrefab);
+        //SpawnObjectAtTheMiddle(shotgunPrefab);
+        SpawnObject spawned = Instantiate(middleShotgunPrefab);
+        spawned.GetComponent<ObjectMover>().InitSpeedController(speedController);
     }
 
     private void SpawnObjectAtTheMiddle(SpawnObject spawnObject)

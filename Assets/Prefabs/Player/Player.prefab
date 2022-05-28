@@ -782,13 +782,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28be3131ba0ca5b48afe34def838e03e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
-  isPowerUp: 0
-  hasWeapon: 0
+  startHealth: 3
+  maxHealth: 5
   starHitFX: {fileID: 6019855453727924842}
   powerUpWindFX: {fileID: 489371905187732931}
   soundController: {fileID: 0}
-  triggersSpawnpoint: {fileID: 0}
   middleShotgunPrefab: {fileID: 4540899603610886991, guid: 2b94bb7fd23e7494eade2ba77ea4f76d, type: 3}
   lavaPitPrefab: {fileID: 3409455733660272093, guid: 2debc2a0e3fc90c4ab96913ce75f7ad0, type: 3}
   speedController: {fileID: 0}

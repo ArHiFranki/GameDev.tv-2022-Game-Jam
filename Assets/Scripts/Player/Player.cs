@@ -5,9 +5,8 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Animator))]
 public class Player : MonoBehaviour
 {
+    [SerializeField] private int startHealth;
     [SerializeField] private int maxHealth;
-    [SerializeField] private bool isPowerUp;
-    [SerializeField] private bool hasWeapon;
     [SerializeField] private ParticleSystem starHitFX;
     [SerializeField] private ParticleSystem powerUpWindFX;
     [SerializeField] private SoundController soundController;
@@ -19,6 +18,8 @@ public class Player : MonoBehaviour
     private const string moveAnimationSpeed = "moveSpeed";
     private int currentHealth;
     private float endPowerUpTime;
+    private bool isPowerUp;
+    private bool hasWeapon;
     private bool isDead;
     private Animator playerAnimator;
 
@@ -56,7 +57,7 @@ public class Player : MonoBehaviour
 
     private void SetInitialCondition()
     {
-        currentHealth = maxHealth;
+        currentHealth = startHealth;
         isPowerUp = false;
         isDead = false;
         HealthChanged?.Invoke(currentHealth);
@@ -145,21 +146,18 @@ public class Player : MonoBehaviour
     public void SpawnLavaPit()
     {
         Debug.Log("Spawn Die Trigger");
-        SpawnObject spawned = Instantiate(lavaPitPrefab);
-        spawned.GetComponent<ObjectMover>().InitSpeedController(speedController);
+        SpawnObjectAtTheMiddle(lavaPitPrefab);
     }
 
     public void SpawnShotgun()
     {
         Debug.Log("Spawn Shotgun Trigger");
-        //SpawnObjectAtTheMiddle(shotgunPrefab);
-        SpawnObject spawned = Instantiate(middleShotgunPrefab);
-        spawned.GetComponent<ObjectMover>().InitSpeedController(speedController);
+        SpawnObjectAtTheMiddle(middleShotgunPrefab);
     }
 
     private void SpawnObjectAtTheMiddle(SpawnObject spawnObject)
     {
-        //SpawnObject spawned = Instantiate(spawnObject, triggersSpawnpoint.position, Quaternion.identity);
-        //spawned.GetComponent<ObjectMover>().InitSpeedController(speedController);
+        SpawnObject spawned = Instantiate(spawnObject);
+        spawned.GetComponent<ObjectMover>().InitSpeedController(speedController);
     }
 }

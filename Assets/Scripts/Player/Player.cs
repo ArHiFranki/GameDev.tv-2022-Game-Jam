@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
     public event UnityAction AliveStatusChanged;
     public event UnityAction PowerUpStatusChanged;
     public event UnityAction WeaponStatusChanged;
+    public event UnityAction FreezeWorld;
     //public event UnityAction PlayerTakeDamage;
 
     private void Awake()
@@ -118,6 +119,7 @@ public class Player : MonoBehaviour
 
     private IEnumerator PlayerDieCoroutine()
     {
+        FreezeWorld?.Invoke();
         soundController.StopBackgroundMusic();
         playerDieFX.Play();
         yield return new WaitForSeconds(playerDieFX.main.duration);

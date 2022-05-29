@@ -975,6 +975,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1777949691}
+  speedController: {fileID: 862243458}
 --- !u!4 &777929596
 Transform:
   m_ObjectHideFlags: 0

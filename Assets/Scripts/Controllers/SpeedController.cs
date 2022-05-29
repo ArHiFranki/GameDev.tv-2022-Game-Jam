@@ -13,7 +13,7 @@ public class SpeedController : MonoBehaviour
     private float currentSpeed;
 
     public float CurrentSpeed => currentSpeed;
-    //public float SpeedLimit => speedLimit;
+    public float SpeedLimit => speedLimit;
     //public float StartSpeed => startSpeed;
     //public float SpeedIncrement => speedIncrement;
 
@@ -56,5 +56,6 @@ public class SpeedController : MonoBehaviour
     public void SetCurrentSpeed(float speedValue)
     {
         currentSpeed = speedValue;
+        SpeedChange?.Invoke();
     }
 }

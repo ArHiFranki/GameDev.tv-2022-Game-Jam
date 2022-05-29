@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     private bool hasWeapon;
     private bool isDead;
     private Animator playerAnimator;
+    private Vector3 startPosition;
 
     public bool IsPowerUp => isPowerUp;
     public bool HasWeapon => hasWeapon;
@@ -44,6 +45,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        startPosition = transform.position;
         SetInitialCondition();
     }
 
@@ -60,7 +62,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void SetInitialCondition()
+    public void SetInitialCondition()
     {
         currentHealth = startHealth;
         isDead = false;
@@ -69,6 +71,13 @@ public class Player : MonoBehaviour
         PowerUpStatusChanged?.Invoke();
         HealthChanged?.Invoke(currentHealth);
         powerUpWindFX.Stop();
+        transform.position = startPosition;
+    }
+
+    public void SetHealthValue(int healthValue)
+    {
+        currentHealth = healthValue;
+        HealthChanged?.Invoke(currentHealth);
     }
 
     public void ApplyDamage(int damage)

@@ -128,10 +128,12 @@ public class Spawner : MonoBehaviour
 
     private void OnSpeedChange()
     {
-        currentSpawnRate = distanceBetweenObjects / speedController.CurrentSpeed;
+        float speed = speedController.CurrentSpeed;
+        speed = Mathf.Clamp(speed, 1, speedController.SpeedLimit);
+        currentSpawnRate = distanceBetweenObjects / speed;
 
-        //Debug.Log("Level: " + currentLevel +
-        //          "   Speed: " + speedController.CurrentSpeed +
-        //          "   SpawnRate: " + currentSpawnRate);
+        Debug.Log("Level: " + currentLevel +
+                  "   Speed: " + speedController.CurrentSpeed +
+                  "   SpawnRate: " + currentSpawnRate);
     }
 }

@@ -10,8 +10,13 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject diedCanvas;
     [SerializeField] private GameObject butText;
     [SerializeField] private GameObject beginningText;
+    [SerializeField] private GameObject hellCanvas;
     [SerializeField] private float butTextDelay;
     [SerializeField] private float beginningTextDelay;
+    [SerializeField] private float transmitToHellDelay;
+    [SerializeField] private GameObject worldCleaner;
+    [SerializeField] private GameObject firstSpawner;
+    [SerializeField] private GameObject hellSpawner;
 
     private float tmpSpeed;
 
@@ -42,10 +47,20 @@ public class GameController : MonoBehaviour
         Debug.Log("Tarsmin to Hell");
         gameCanvas.SetActive(false);
         diedCanvas.SetActive(true);
+        worldCleaner.SetActive(true);
+        firstSpawner.SetActive(false);
         yield return new WaitForSeconds(butTextDelay);
         butText.SetActive(true);
+        worldCleaner.SetActive(false);
         yield return new WaitForSeconds(beginningTextDelay);
         beginningText.SetActive(true);
+        player.SetInitialCondition();
+        yield return new WaitForSeconds(transmitToHellDelay);
+        diedCanvas.SetActive(false);
+        gameCanvas.SetActive(true);
+        hellCanvas.SetActive(true);
+        hellSpawner.SetActive(true);
+        UnfreezeWorld();
     }
 
     private IEnumerator Resurrection()

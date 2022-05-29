@@ -17,6 +17,11 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject worldCleaner;
     [SerializeField] private GameObject firstSpawner;
     [SerializeField] private GameObject hellSpawner;
+    [SerializeField] private PlayerMoveController playerMoveController;
+    [SerializeField] private float newMaxHeight;
+    [SerializeField] private float newMinHeight;
+    [SerializeField] private float newMaxWidth;
+    [SerializeField] private float newMinWidth;
 
     private float tmpSpeed;
 
@@ -58,6 +63,7 @@ public class GameController : MonoBehaviour
         beginningText.SetActive(true);
         player.SetInitialCondition();
         player.SetHealthValue(0);
+        playerMoveController.SetBorders(newMaxHeight, newMinHeight, newMaxWidth, newMinWidth);
         yield return new WaitForSeconds(transmitToHellDelay);
         diedCanvas.SetActive(false);
         gameCanvas.SetActive(true);
@@ -85,5 +91,6 @@ public class GameController : MonoBehaviour
     private void OnPickUpShotgunInHell()
     {
         Debug.Log("PickUp Shotgun in Hell");
+        playerMoveController.ResetBorders();
     }
 }

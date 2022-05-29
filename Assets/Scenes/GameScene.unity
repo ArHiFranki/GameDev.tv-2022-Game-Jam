@@ -1521,6 +1521,11 @@ MonoBehaviour:
   worldCleaner: {fileID: 1919738877}
   firstSpawner: {fileID: 1309675663}
   hellSpawner: {fileID: 1031539657}
+  playerMoveController: {fileID: 1777949697}
+  newMaxHeight: 0
+  newMinHeight: -2
+  newMaxWidth: 4
+  newMinWidth: -7
 --- !u!4 &777929596
 Transform:
   m_ObjectHideFlags: 0
@@ -2962,6 +2967,17 @@ PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: 7477198841216446137, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
   m_PrefabInstance: {fileID: 7266401477420580811}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1777949697 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6028723171029707847, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
+  m_PrefabInstance: {fileID: 7266401477420580811}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a036846284f565243b3b772552bf1f3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1791142558
 GameObject:
   m_ObjectHideFlags: 0

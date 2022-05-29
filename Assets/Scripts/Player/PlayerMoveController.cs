@@ -15,7 +15,24 @@ public class PlayerMoveController : MonoBehaviour
     private Vector3 deltaPosition;
     private Vector3 oldPosition;
     private Vector3 newPosition;
+    private float defaultMaxHeightValue;
+    private float defaultMinHeightValue;
+    private float defaultMaxWidthValue;
+    private float defaultMinWidthValue;
     private const string moveAnimationSpeedValue = "moveSpeed";
+
+    public float MaxHeight => maxHeight;
+    public float MinHeight => minHeight;
+    public float MaxWidth => maxWidth;
+    public float MinWidth => minWidth;
+
+    private void Start()
+    {
+        defaultMaxHeightValue = maxHeight;
+        defaultMinHeightValue = minHeight;
+        defaultMaxWidthValue = maxWidth;
+        defaultMinWidthValue = minWidth;
+    }
 
     private void Update()
     {
@@ -54,5 +71,21 @@ public class PlayerMoveController : MonoBehaviour
         {
             playerAnimator.SetFloat(moveAnimationSpeedValue, moveForwardAnimationSpeed);
         }
+    }
+
+    public void SetBorders(float maxHeightValue, float minHeightValue, float maxWidthValue, float minWidthValue)
+    {
+        maxHeight = maxHeightValue;
+        minHeight = minHeightValue;
+        maxWidth = maxWidthValue;
+        minWidth = minWidthValue;
+    }
+
+    public void ResetBorders()
+    {
+        maxHeight = defaultMaxHeightValue;
+        minHeight = defaultMinHeightValue;
+        maxWidth = defaultMaxWidthValue;
+        minWidth = defaultMinWidthValue;
     }
 }

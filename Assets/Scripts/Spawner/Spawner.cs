@@ -136,4 +136,10 @@ public class Spawner : MonoBehaviour
                   "   Speed: " + speedController.CurrentSpeed +
                   "   SpawnRate: " + currentSpawnRate);
     }
+
+    public void SetCurrentLevel(int levelValue)
+    {
+        currentLevel = levelValue;
+        LevelChange?.Invoke();
+    }
 }

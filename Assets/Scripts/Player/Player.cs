@@ -23,12 +23,14 @@ public class Player : MonoBehaviour
     private bool isPowerUp;
     private bool hasWeapon;
     private bool isDead;
+    private bool isInHell;
     private Animator playerAnimator;
     private Vector3 startPosition;
 
     public bool IsPowerUp => isPowerUp;
     public bool HasWeapon => hasWeapon;
     public bool IsDead => isDead;
+    public bool IsInHell => isInHell;
 
     public event UnityAction<int> HealthChanged;
     public event UnityAction Died;
@@ -36,7 +38,7 @@ public class Player : MonoBehaviour
     public event UnityAction PowerUpStatusChanged;
     public event UnityAction WeaponStatusChanged;
     public event UnityAction FreezeWorld;
-    //public event UnityAction PlayerTakeDamage;
+    public event UnityAction PickUpShotgunInHell;
 
     private void Awake()
     {
@@ -46,6 +48,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         startPosition = transform.position;
+        isInHell = false;
         SetInitialCondition();
     }
 
@@ -121,6 +124,7 @@ public class Player : MonoBehaviour
     {
         Debug.Log("You Die");
         isDead = true;
+        isInHell = true;
         DisableWeapon();
         AliveStatusChanged?.Invoke();
         StartCoroutine(PlayerDieCoroutine());
@@ -186,5 +190,10 @@ public class Player : MonoBehaviour
     {
         SpawnObject spawned = Instantiate(spawnObject);
         spawned.GetComponent<ObjectMover>().InitSpeedController(speedController);
+    }
+
+    public void PickUpshotgunInHellEventTrigger()
+    {
+        PickUpShotgunInHell?.Invoke();
     }
 }

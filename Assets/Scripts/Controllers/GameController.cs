@@ -24,12 +24,14 @@ public class GameController : MonoBehaviour
     {
         player.Died += OnPlayerDied;
         player.FreezeWorld += OnFreezeWorld;
+        player.PickUpShotgunInHell += OnPickUpShotgunInHell;
     }
 
     private void OnDisable()
     {
         player.Died -= OnPlayerDied;
         player.FreezeWorld -= OnFreezeWorld;
+        player.PickUpShotgunInHell -= OnPickUpShotgunInHell;
     }
 
     private void OnPlayerDied()
@@ -55,6 +57,7 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(beginningTextDelay);
         beginningText.SetActive(true);
         player.SetInitialCondition();
+        player.SetHealthValue(0);
         yield return new WaitForSeconds(transmitToHellDelay);
         diedCanvas.SetActive(false);
         gameCanvas.SetActive(true);
@@ -77,5 +80,10 @@ public class GameController : MonoBehaviour
     private void UnfreezeWorld()
     {
         speedController.SetCurrentSpeed(tmpSpeed);
+    }
+
+    private void OnPickUpShotgunInHell()
+    {
+        Debug.Log("PickUp Shotgun in Hell");
     }
 }

@@ -28,6 +28,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject gameOverScreen;
 
     private float tmpSpeed;
+    private bool isFirstShotgunPickUp = true;
 
     private void OnEnable()
     {
@@ -96,7 +97,11 @@ public class GameController : MonoBehaviour
     {
         Debug.Log("PickUp Shotgun in Hell");
         playerMoveController.ResetBorders();
-        StartCoroutine(BlinkShootText());
+        if(isFirstShotgunPickUp)
+        {
+            StartCoroutine(BlinkShootText());
+            isFirstShotgunPickUp = false;
+        }
     }
 
     private IEnumerator BlinkShootText()

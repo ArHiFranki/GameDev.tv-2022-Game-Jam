@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class UIHeart : MonoBehaviour
+public class UIBarElement : MonoBehaviour
 {
     private void Awake()
     {

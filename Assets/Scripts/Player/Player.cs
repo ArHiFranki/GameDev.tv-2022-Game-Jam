@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private int startHealth;
     [SerializeField] private int maxHealth;
+    [SerializeField] private int maxAmmo;
     [SerializeField] private ParticleSystem starHitFX;
     [SerializeField] private ParticleSystem powerUpWindFX;
     [SerializeField] private ParticleSystem playerDieFX;
@@ -19,6 +20,7 @@ public class Player : MonoBehaviour
     private const string moveAnimationSpeed = "moveSpeed";
     private const string takeDamageAnimationTrigger = "TakeDamage";
     private int currentHealth;
+    private int currentAmmo;
     private float endPowerUpTime;
     private bool isPowerUp;
     private bool hasWeapon;
@@ -35,6 +37,7 @@ public class Player : MonoBehaviour
     public bool IsGameOver => isGameOver;
 
     public event UnityAction<int> HealthChanged;
+    public event UnityAction<int> AmmoChanged;
     public event UnityAction Died;
     public event UnityAction AliveStatusChanged;
     public event UnityAction PowerUpStatusChanged;
@@ -96,11 +99,6 @@ public class Player : MonoBehaviour
             playerAnimator.SetTrigger(takeDamageAnimationTrigger);
             soundController.PlayTakeDamageSound();
 
-            //if (isInHell)
-            //{
-            //    SetGameOverCondition();
-            //}
-
             if (currentHealth <= 0)
             {
                 Die();
@@ -156,20 +154,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    //private void SetGameOverCondition()
-    //{
-    //    StartCoroutine(GameOverCoroutine());
-    //}
-
-    //private IEnumerator GameOverCoroutine()
-    //{
-    //    FreezeWorld?.Invoke();
-    //    soundController.StopBackgroundMusic();
-    //    playerDieFX.Play();
-    //    yield return new WaitForSeconds(playerDieFX.main.duration);
-    //    GameOver?.Invoke();
-    //}
-
     public void PickUpCoin()
     {
         soundController.PlayCoinUpSound();
@@ -196,6 +180,8 @@ public class Player : MonoBehaviour
         Debug.Log("EnableWeapon");
         hasWeapon = true;
         WeaponStatusChanged?.Invoke();
+        currentAmmo = maxAmmo;
+        AmmoChanged?.Invoke(currentAmmo);
     }
 
     public void DisableWeapon()
@@ -203,6 +189,17 @@ public class Player : MonoBehaviour
         Debug.Log("DisableWeapon");
         hasWeapon = false;
         WeaponStatusChanged?.Invoke();
+    }
+
+    public void ReduceAmmo()
+    {
+        currentAmmo--;
+        AmmoChanged?.Invoke(currentAmmo);
+
+        if (currentAmmo <= 0)
+        {
+            DisableWeapon();
+        }
     }
 
     public void SpawnLavaPit()

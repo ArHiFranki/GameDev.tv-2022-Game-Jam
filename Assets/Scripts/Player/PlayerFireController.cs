@@ -48,6 +48,7 @@ public class PlayerFireController : MonoBehaviour
             timeAfterLastShoot = 0;
             playerAnimator.SetTrigger(fireAnimationTrigger);
             fireFX.Play();
+            player.ReduceAmmo();
         }
     }
 }

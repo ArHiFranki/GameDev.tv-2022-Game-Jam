@@ -23,6 +23,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private float newMaxWidth;
     [SerializeField] private float newMinWidth;
     [SerializeField] private GameObject shootText;
+    [SerializeField] private GameObject shootTextShadow;
     [SerializeField] private float shootTextDelay;
     [SerializeField] private int shootTextBlinkCount;
     [SerializeField] private GameObject gameOverScreen;
@@ -106,8 +107,10 @@ public class GameController : MonoBehaviour
         for (int i = 0; i < shootTextBlinkCount; i++)
         {
             shootText.SetActive(true);
+            shootTextShadow.SetActive(true);
             yield return new WaitForSeconds(shootTextDelay);
             shootText.SetActive(false);
+            shootTextShadow.SetActive(false);
             yield return new WaitForSeconds(shootTextDelay);
         }
     }

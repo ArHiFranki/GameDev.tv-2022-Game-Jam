@@ -33,6 +33,7 @@ public class GameController : MonoBehaviour
         player.Died += OnPlayerDied;
         player.FreezeWorld += OnFreezeWorld;
         player.PickUpShotgunInHell += OnPickUpShotgunInHell;
+        player.GameOver += OnGameOver;
     }
 
     private void OnDisable()
@@ -40,6 +41,7 @@ public class GameController : MonoBehaviour
         player.Died -= OnPlayerDied;
         player.FreezeWorld -= OnFreezeWorld;
         player.PickUpShotgunInHell -= OnPickUpShotgunInHell;
+        player.GameOver -= OnGameOver;
     }
 
     private void OnPlayerDied()
@@ -107,5 +109,11 @@ public class GameController : MonoBehaviour
             shootText.SetActive(false);
             yield return new WaitForSeconds(shootTextDelay);
         }
+    }
+
+    private void OnGameOver()
+    {
+        Debug.Log("Game Over");
+        hellSpawner.GetComponent<Spawner>().SetSpawnCondition(false);
     }
 }

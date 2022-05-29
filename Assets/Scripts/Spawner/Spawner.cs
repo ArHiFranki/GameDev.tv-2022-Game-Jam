@@ -17,6 +17,7 @@ public class Spawner : MonoBehaviour
     private float currentSpawnRate;
     private int[] previousPoints = new int[4];
     private Vector3 spawnPointPosition;
+    private bool isSpawnEnable;
 
     public int CurrentLevel => currentLevel;
 
@@ -35,6 +36,7 @@ public class Spawner : MonoBehaviour
     private void Start()
     {
         currentLevel = 0;
+        isSpawnEnable = true;
         StartCoroutine(SpawnWave());
     }
 
@@ -49,6 +51,11 @@ public class Spawner : MonoBehaviour
             ShuffleSpawnObjects();
             for (int i = 0; i < spawnObjects.Count; i++)
             {
+                if (!isSpawnEnable)
+                {
+                    break;
+                }
+
                 spawnPointNumber = GenerateSpawnPointNumber();
                 spawnPointPosition = spawnPoints[spawnPointNumber].position;
 
@@ -141,5 +148,10 @@ public class Spawner : MonoBehaviour
     {
         currentLevel = levelValue;
         LevelChange?.Invoke();
+    }
+
+    public void SetSpawnCondition(bool condition)
+    {
+        isSpawnEnable = condition;
     }
 }

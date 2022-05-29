@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     private bool hasWeapon;
     private bool isDead;
     private bool isInHell;
+    private bool isGameOver;
     private Animator playerAnimator;
     private Vector3 startPosition;
 
@@ -31,6 +32,7 @@ public class Player : MonoBehaviour
     public bool HasWeapon => hasWeapon;
     public bool IsDead => isDead;
     public bool IsInHell => isInHell;
+    public bool IsGameOver => isGameOver;
 
     public event UnityAction<int> HealthChanged;
     public event UnityAction Died;
@@ -39,6 +41,7 @@ public class Player : MonoBehaviour
     public event UnityAction WeaponStatusChanged;
     public event UnityAction FreezeWorld;
     public event UnityAction PickUpShotgunInHell;
+    public event UnityAction GameOver;
 
     private void Awake()
     {
@@ -49,6 +52,7 @@ public class Player : MonoBehaviour
     {
         startPosition = transform.position;
         isInHell = false;
+        isGameOver = false;
         SetInitialCondition();
     }
 
@@ -92,6 +96,11 @@ public class Player : MonoBehaviour
             playerAnimator.SetTrigger(takeDamageAnimationTrigger);
             soundController.PlayTakeDamageSound();
 
+            //if (isInHell)
+            //{
+            //    SetGameOverCondition();
+            //}
+
             if (currentHealth <= 0)
             {
                 Die();
@@ -122,22 +131,44 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log("You Die");
-        isDead = true;
-        isInHell = true;
-        DisableWeapon();
-        AliveStatusChanged?.Invoke();
         StartCoroutine(PlayerDieCoroutine());
     }
 
     private IEnumerator PlayerDieCoroutine()
     {
+        Debug.Log("You Die");
+        isDead = true;
+        DisableWeapon();
+        AliveStatusChanged?.Invoke();
         FreezeWorld?.Invoke();
         soundController.StopBackgroundMusic();
         playerDieFX.Play();
         yield return new WaitForSeconds(playerDieFX.main.duration);
-        Died?.Invoke();
+
+        if (isInHell)
+        {
+            GameOver?.Invoke();
+        }
+        else
+        {
+            Died?.Invoke();
+            isInHell = true;
+        }
     }
+
+    //private void SetGameOverCondition()
+    //{
+    //    StartCoroutine(GameOverCoroutine());
+    //}
+
+    //private IEnumerator GameOverCoroutine()
+    //{
+    //    FreezeWorld?.Invoke();
+    //    soundController.StopBackgroundMusic();
+    //    playerDieFX.Play();
+    //    yield return new WaitForSeconds(playerDieFX.main.duration);
+    //    GameOver?.Invoke();
+    //}
 
     public void PickUpCoin()
     {

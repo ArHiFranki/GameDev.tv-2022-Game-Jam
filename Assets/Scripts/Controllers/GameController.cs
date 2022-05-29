@@ -25,6 +25,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject shootText;
     [SerializeField] private float shootTextDelay;
     [SerializeField] private int shootTextBlinkCount;
+    [SerializeField] private GameObject gameOverScreen;
 
     private float tmpSpeed;
 
@@ -115,5 +116,6 @@ public class GameController : MonoBehaviour
     {
         Debug.Log("Game Over");
         hellSpawner.GetComponent<Spawner>().SetSpawnCondition(false);
+        gameOverScreen.SetActive(true);
     }
 }

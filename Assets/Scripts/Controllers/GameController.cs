@@ -22,6 +22,9 @@ public class GameController : MonoBehaviour
     [SerializeField] private float newMinHeight;
     [SerializeField] private float newMaxWidth;
     [SerializeField] private float newMinWidth;
+    [SerializeField] private GameObject shootText;
+    [SerializeField] private float shootTextDelay;
+    [SerializeField] private int shootTextBlinkCount;
 
     private float tmpSpeed;
 
@@ -92,5 +95,17 @@ public class GameController : MonoBehaviour
     {
         Debug.Log("PickUp Shotgun in Hell");
         playerMoveController.ResetBorders();
+        StartCoroutine(BlinkShootText());
+    }
+
+    private IEnumerator BlinkShootText()
+    {
+        for (int i = 0; i < shootTextBlinkCount; i++)
+        {
+            shootText.SetActive(true);
+            yield return new WaitForSeconds(shootTextDelay);
+            shootText.SetActive(false);
+            yield return new WaitForSeconds(shootTextDelay);
+        }
     }
 }

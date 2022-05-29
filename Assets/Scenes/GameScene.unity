@@ -1324,7 +1324,7 @@ MonoBehaviour:
   - {fileID: 654317592}
   - {fileID: 294249936}
   waveConfigs:
-  - {fileID: 11400000, guid: b1738f8463fa2b1489f31f0f36620109, type: 2}
+  - {fileID: 11400000, guid: df4cb0e68e8e7c34ebd3be9822a5a6d6, type: 2}
   - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
 --- !u!1 &1408897477
 GameObject:
@@ -2051,6 +2051,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1325560395, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a8f9f641c0d48d041912e30e47ff0c00, type: 3}
     - target: {fileID: 2455229629015369379, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
       propertyPath: playerDieFX
       value: 
@@ -2063,6 +2067,14 @@ PrefabInstance:
       propertyPath: speedController
       value: 
       objectReference: {fileID: 862243458}
+    - target: {fileID: 4220117412153557165, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
+      propertyPath: openEyes
+      value: 
+      objectReference: {fileID: 21300000, guid: a8f9f641c0d48d041912e30e47ff0c00, type: 3}
+    - target: {fileID: 4220117412153557165, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
+      propertyPath: closedEyes
+      value: 
+      objectReference: {fileID: 21300000, guid: 73887a90692353c478c3066690a10ab8, type: 3}
     - target: {fileID: 4220117412153557165, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
       propertyPath: playerCollider
       value: 

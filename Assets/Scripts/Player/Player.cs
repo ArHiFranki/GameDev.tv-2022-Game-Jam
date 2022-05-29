@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
 
     private const string powerUpAnimationTrigger = "isPowerUp";
     private const string moveAnimationSpeed = "moveSpeed";
+    private const string takeDamageAnimationTrigger = "TakeDamage";
     private int currentHealth;
     private float endPowerUpTime;
     private bool isPowerUp;
@@ -33,6 +34,7 @@ public class Player : MonoBehaviour
     public event UnityAction AliveStatusChanged;
     public event UnityAction PowerUpStatusChanged;
     public event UnityAction WeaponStatusChanged;
+    //public event UnityAction PlayerTakeDamage;
 
     private void Awake()
     {
@@ -74,6 +76,7 @@ public class Player : MonoBehaviour
         {
             currentHealth -= damage;
             HealthChanged?.Invoke(currentHealth);
+            playerAnimator.SetTrigger(takeDamageAnimationTrigger);
             soundController.PlayTakeDamageSound();
 
             if (currentHealth <= 0)
@@ -84,6 +87,7 @@ public class Player : MonoBehaviour
         else
         {
             starHitFX.Play();
+            playerAnimator.SetTrigger(takeDamageAnimationTrigger);
             soundController.PlayDestroyEnemySound();
         }
     }
@@ -107,6 +111,7 @@ public class Player : MonoBehaviour
     {
         Debug.Log("You Die");
         isDead = true;
+        DisableWeapon();
         AliveStatusChanged?.Invoke();
         StartCoroutine(PlayerDieCoroutine());
     }

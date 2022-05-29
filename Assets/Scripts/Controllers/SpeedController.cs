@@ -4,7 +4,8 @@ using UnityEngine.Events;
 public class SpeedController : MonoBehaviour
 {
     [SerializeField] private Player player;
-    [SerializeField] private Spawner spawner;
+    [SerializeField] private Spawner firstSpawner;
+    [SerializeField] private Spawner hellSpawner;
     [SerializeField] private float startSpeed;
     [SerializeField] private float speedIncrement;
     [SerializeField] private float starSpeedMultiplier;
@@ -21,27 +22,41 @@ public class SpeedController : MonoBehaviour
 
     private void OnEnable()
     {
-        spawner.LevelChange += OnSpeedChange;
+        firstSpawner.LevelChange += OnSpeedChange;
+        hellSpawner.LevelChange += OnSpeedChange;
         player.PowerUpStatusChanged += OnSpeedChange;
     }
 
     private void OnDisable()
     {
-        spawner.LevelChange -= OnSpeedChange;
+        firstSpawner.LevelChange -= OnSpeedChange;
+        hellSpawner.LevelChange -= OnSpeedChange;
         player.PowerUpStatusChanged -= OnSpeedChange;
     }
 
     private void OnSpeedChange()
     {
+        if (player.IsInHell)
+        {
+            SpeedChangeCalculator(hellSpawner.CurrentLevel);
+        }
+        else
+        {
+            SpeedChangeCalculator(firstSpawner.CurrentLevel);
+        }
+    }
+
+    private void SpeedChangeCalculator(int currentLevel)
+    {
         float tmpCurrentSpeed;
 
         if (player.IsPowerUp)
         {
-            tmpCurrentSpeed = (startSpeed + spawner.CurrentLevel * speedIncrement) * starSpeedMultiplier;
+            tmpCurrentSpeed = (startSpeed + currentLevel * speedIncrement) * starSpeedMultiplier;
         }
         else
         {
-            tmpCurrentSpeed = startSpeed + spawner.CurrentLevel * speedIncrement;
+            tmpCurrentSpeed = startSpeed + currentLevel * speedIncrement;
         }
 
         if (tmpCurrentSpeed >= speedLimit)

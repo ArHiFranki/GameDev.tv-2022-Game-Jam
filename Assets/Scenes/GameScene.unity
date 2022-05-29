@@ -2434,7 +2434,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1777949691}
-  spawner: {fileID: 1309675665}
+  firstSpawner: {fileID: 1309675665}
+  hellSpawner: {fileID: 1031539658}
   startSpeed: 4
   speedIncrement: 1
   starSpeedMultiplier: 1.5
@@ -2607,6 +2608,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cfbd6682a74997d46b7ff43ca2953541, type: 2}
   - {fileID: 11400000, guid: 13872ddfa150a8c4e9d386891211a50d, type: 2}
   - {fileID: 11400000, guid: c32aa4dabcc5e8246b75a0933a685f0a, type: 2}
+  - {fileID: 11400000, guid: 66c12deea66219a478a092660c84f3b4, type: 2}
+  - {fileID: 11400000, guid: 66c12deea66219a478a092660c84f3b4, type: 2}
 --- !u!4 &1031539659
 Transform:
   m_ObjectHideFlags: 0
@@ -3001,6 +3004,11 @@ MonoBehaviour:
   - {fileID: 294249936}
   waveConfigs:
   - {fileID: 11400000, guid: df4cb0e68e8e7c34ebd3be9822a5a6d6, type: 2}
+  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
+  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
+  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
+  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
+  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
   - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
 --- !u!1 &1337773121
 GameObject:

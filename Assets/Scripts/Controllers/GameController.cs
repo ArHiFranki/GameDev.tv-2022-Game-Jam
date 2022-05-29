@@ -28,6 +28,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject gameOverScreen;
 
     private float tmpSpeed;
+    private int tmpLevel;
     private bool isFirstShotgunPickUp = true;
 
     private void OnEnable()
@@ -51,14 +52,9 @@ public class GameController : MonoBehaviour
         StartCoroutine(TransmitToHell());
     }
 
-    private void OnResurrection()
-    {
-        StartCoroutine(Resurrection());
-    }
-
     private IEnumerator TransmitToHell()
     {
-        Debug.Log("Tarsmin to Hell");
+        tmpLevel = firstSpawner.GetComponent<Spawner>().CurrentLevel;
         diedCanvas.SetActive(true);
         worldCleaner.SetActive(true);
         firstSpawner.SetActive(false);
@@ -75,11 +71,8 @@ public class GameController : MonoBehaviour
         hellCanvas.SetActive(true);
         hellSpawner.SetActive(true);
         UnfreezeWorld();
-    }
-
-    private IEnumerator Resurrection()
-    {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.1f);
+        hellSpawner.GetComponent<Spawner>().SetCurrentLevel(tmpLevel - 1);
     }
 
     private void OnFreezeWorld()
@@ -95,7 +88,6 @@ public class GameController : MonoBehaviour
 
     private void OnPickUpShotgunInHell()
     {
-        Debug.Log("PickUp Shotgun in Hell");
         playerMoveController.ResetBorders();
         if(isFirstShotgunPickUp)
         {
@@ -119,7 +111,6 @@ public class GameController : MonoBehaviour
 
     private void OnGameOver()
     {
-        Debug.Log("Game Over");
         hellSpawner.GetComponent<Spawner>().SetSpawnCondition(false);
         gameOverScreen.SetActive(true);
     }

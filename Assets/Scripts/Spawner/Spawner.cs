@@ -141,6 +141,7 @@ public class Spawner : MonoBehaviour
 
         Debug.Log("Level: " + currentLevel +
                   "   Speed: " + speedController.CurrentSpeed +
+                  "   Clamped Speed: " + speed +
                   "   SpawnRate: " + currentSpawnRate);
     }
 

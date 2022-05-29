@@ -134,7 +134,6 @@ public class Player : MonoBehaviour
 
     private IEnumerator PlayerDieCoroutine()
     {
-        Debug.Log("You Die");
         isDead = true;
         DisableWeapon();
         AliveStatusChanged?.Invoke();
@@ -179,7 +178,6 @@ public class Player : MonoBehaviour
 
     public void EnableWeapon()
     {
-        Debug.Log("EnableWeapon");
         hasWeapon = true;
         WeaponStatusChanged?.Invoke();
         currentAmmo = maxAmmo;
@@ -188,7 +186,6 @@ public class Player : MonoBehaviour
 
     public void DisableWeapon()
     {
-        Debug.Log("DisableWeapon");
         hasWeapon = false;
         WeaponStatusChanged?.Invoke();
     }

@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     [SerializeField] private int maxHealth;
     [SerializeField] private ParticleSystem starHitFX;
     [SerializeField] private ParticleSystem powerUpWindFX;
+    [SerializeField] private ParticleSystem playerDieFX;
     [SerializeField] private SoundController soundController;
     [SerializeField] private SpawnObject middleShotgunPrefab;
     [SerializeField] private SpawnObject lavaPitPrefab;
@@ -29,6 +30,7 @@ public class Player : MonoBehaviour
 
     public event UnityAction<int> HealthChanged;
     public event UnityAction Died;
+    public event UnityAction AliveStatusChanged;
     public event UnityAction PowerUpStatusChanged;
     public event UnityAction WeaponStatusChanged;
 
@@ -58,8 +60,10 @@ public class Player : MonoBehaviour
     private void SetInitialCondition()
     {
         currentHealth = startHealth;
-        isPowerUp = false;
         isDead = false;
+        AliveStatusChanged?.Invoke();
+        isPowerUp = false;
+        PowerUpStatusChanged?.Invoke();
         HealthChanged?.Invoke(currentHealth);
         powerUpWindFX.Stop();
     }
@@ -103,9 +107,16 @@ public class Player : MonoBehaviour
     {
         Debug.Log("You Die");
         isDead = true;
-        Died?.Invoke();
+        AliveStatusChanged?.Invoke();
+        StartCoroutine(PlayerDieCoroutine());
+    }
+
+    private IEnumerator PlayerDieCoroutine()
+    {
         soundController.StopBackgroundMusic();
-        //soundController.PlayGameOverSound();
+        playerDieFX.Play();
+        yield return new WaitForSeconds(playerDieFX.main.duration);
+        Died?.Invoke();
     }
 
     public void PickUpCoin()

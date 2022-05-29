@@ -539,6 +539,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ffaac24ae2053243bcd01dcf379cad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!212 &474296490 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1325560395, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
+  m_PrefabInstance: {fileID: 7266401477420580811}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &509190379
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,6 +974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34f457fbbd544614a8626f78ad3ac281, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1777949691}
 --- !u!4 &777929596
 Transform:
   m_ObjectHideFlags: 0
@@ -1141,6 +1147,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &929786350 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 44782942, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
+  m_PrefabInstance: {fileID: 7266401477420580811}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1025793398
 GameObject:
   m_ObjectHideFlags: 0
@@ -1313,7 +1324,7 @@ MonoBehaviour:
   - {fileID: 654317592}
   - {fileID: 294249936}
   waveConfigs:
-  - {fileID: 11400000, guid: 404c53e44eb74ec45ac6c7416135c1a3, type: 2}
+  - {fileID: 11400000, guid: b1738f8463fa2b1489f31f0f36620109, type: 2}
   - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
 --- !u!1 &1408897477
 GameObject:
@@ -1562,6 +1573,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreKeeper: {fileID: 301818684}
   coinCountText: {fileID: 91392131}
+--- !u!212 &1583291401 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 239379695, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
+  m_PrefabInstance: {fileID: 7266401477420580811}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1754131683
 GameObject:
   m_ObjectHideFlags: 0
@@ -1661,6 +1677,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28be3131ba0ca5b48afe34def838e03e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!60 &1777949693 stripped
+PolygonCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7477198841216446137, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
+  m_PrefabInstance: {fileID: 7266401477420580811}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1861999021
 GameObject:
   m_ObjectHideFlags: 0
@@ -2031,6 +2052,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2455229629015369379, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
+      propertyPath: playerDieFX
+      value: 
+      objectReference: {fileID: 7266401477420580812}
+    - target: {fileID: 2455229629015369379, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
       propertyPath: soundController
       value: 
       objectReference: {fileID: 1957556605}
@@ -2038,6 +2063,22 @@ PrefabInstance:
       propertyPath: speedController
       value: 
       objectReference: {fileID: 862243458}
+    - target: {fileID: 4220117412153557165, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
+      propertyPath: playerCollider
+      value: 
+      objectReference: {fileID: 1777949693}
+    - target: {fileID: 4220117412153557165, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
+      propertyPath: eyesSpriteRenderer
+      value: 
+      objectReference: {fileID: 474296490}
+    - target: {fileID: 4220117412153557165, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
+      propertyPath: mouthSpriteRenderer
+      value: 
+      objectReference: {fileID: 929786350}
+    - target: {fileID: 4220117412153557165, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
+      propertyPath: shadowSpriteRenderer
+      value: 
+      objectReference: {fileID: 1583291401}
     - target: {fileID: 7266401478958753153, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2088,3 +2129,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
+--- !u!198 &7266401477420580812 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4004320752309863558, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
+  m_PrefabInstance: {fileID: 7266401477420580811}
+  m_PrefabAsset: {fileID: 0}

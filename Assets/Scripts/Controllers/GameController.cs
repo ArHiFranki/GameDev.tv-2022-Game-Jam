@@ -6,6 +6,12 @@ public class GameController : MonoBehaviour
 {
     [SerializeField] private Player player;
     [SerializeField] private SpeedController speedController;
+    [SerializeField] private GameObject gameCanvas;
+    [SerializeField] private GameObject diedCanvas;
+    [SerializeField] private GameObject butText;
+    [SerializeField] private GameObject beginningText;
+    [SerializeField] private float butTextDelay;
+    [SerializeField] private float beginningTextDelay;
 
     private float tmpSpeed;
 
@@ -34,7 +40,12 @@ public class GameController : MonoBehaviour
     private IEnumerator TransmitToHell()
     {
         Debug.Log("Tarsmin to Hell");
-        yield return new WaitForSeconds(1);
+        gameCanvas.SetActive(false);
+        diedCanvas.SetActive(true);
+        yield return new WaitForSeconds(butTextDelay);
+        butText.SetActive(true);
+        yield return new WaitForSeconds(beginningTextDelay);
+        beginningText.SetActive(true);
     }
 
     private IEnumerator Resurrection()

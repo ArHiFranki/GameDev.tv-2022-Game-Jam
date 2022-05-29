@@ -138,6 +138,8 @@ public class Player : MonoBehaviour
         isDead = true;
         DisableWeapon();
         AliveStatusChanged?.Invoke();
+        currentAmmo = 0;
+        AmmoChanged?.Invoke(currentAmmo);
         FreezeWorld?.Invoke();
         soundController.StopBackgroundMusic();
         playerDieFX.Play();

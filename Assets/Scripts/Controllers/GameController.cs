@@ -6,7 +6,6 @@ public class GameController : MonoBehaviour
 {
     [SerializeField] private Player player;
     [SerializeField] private SpeedController speedController;
-    [SerializeField] private GameObject gameCanvas;
     [SerializeField] private GameObject diedCanvas;
     [SerializeField] private GameObject butText;
     [SerializeField] private GameObject beginningText;
@@ -59,7 +58,6 @@ public class GameController : MonoBehaviour
     private IEnumerator TransmitToHell()
     {
         Debug.Log("Tarsmin to Hell");
-        gameCanvas.SetActive(false);
         diedCanvas.SetActive(true);
         worldCleaner.SetActive(true);
         firstSpawner.SetActive(false);
@@ -69,11 +67,10 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(beginningTextDelay);
         beginningText.SetActive(true);
         player.SetInitialCondition();
-        player.SetHealthValue(0);
+        player.SetHealthValue(1);
         playerMoveController.SetBorders(newMaxHeight, newMinHeight, newMaxWidth, newMinWidth);
         yield return new WaitForSeconds(transmitToHellDelay);
         diedCanvas.SetActive(false);
-        gameCanvas.SetActive(true);
         hellCanvas.SetActive(true);
         hellSpawner.SetActive(true);
         UnfreezeWorld();

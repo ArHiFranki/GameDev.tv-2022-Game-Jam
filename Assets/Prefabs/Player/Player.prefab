@@ -787,7 +787,7 @@ MonoBehaviour:
   maxHealth: 5
   starHitFX: {fileID: 6019855453727924842}
   powerUpWindFX: {fileID: 489371905187732931}
-  playerDieFX: {fileID: 0}
+  playerDieFX: {fileID: 4004320752309863558}
   soundController: {fileID: 0}
   middleShotgunPrefab: {fileID: 4540899603610886991, guid: 2b94bb7fd23e7494eade2ba77ea4f76d, type: 3}
   lavaPitPrefab: {fileID: 3409455733660272093, guid: 2debc2a0e3fc90c4ab96913ce75f7ad0, type: 3}
@@ -807,12 +807,16 @@ MonoBehaviour:
   playerSpriteRenderer: {fileID: 3701589676063667636}
   shotgunSpriteRenderer: {fileID: 7266401477420580813}
   handSpriteRenderer: {fileID: 1503737327}
+  mouthSpriteRenderer: {fileID: 44782942}
+  eyesSpriteRenderer: {fileID: 1325560395}
+  shadowSpriteRenderer: {fileID: 239379695}
   playerNormalSprite: {fileID: 21300000, guid: 237a972c4e1e4b24fbf2e0d36e3a6381, type: 3}
   playerNormalFireSprite: {fileID: 21300000, guid: 23dfdb93e18a4654e8a6f15226baa78e, type: 3}
   playerNormalHand: {fileID: 21300000, guid: ebf865a1e8a3b8a4fbb8857e171f39e0, type: 3}
   playerPowerUpSprite: {fileID: 21300000, guid: 78c4c914bb40ac74499d765ed1d48162, type: 3}
   playerPowerUpFireSprite: {fileID: 21300000, guid: b9307ee3618ebde4993f5826913407ca, type: 3}
   playerPowerUpHand: {fileID: 21300000, guid: 65bfabcc60741d14fbd3eca063dc5c19, type: 3}
+  playerCollider: {fileID: 7477198841216446137}
 --- !u!114 &15416230234428406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1219,6 +1223,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 258b7fecbfcad1441b3b7ee34b27111b, type: 3}
+--- !u!198 &4004320752309863558 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 19855650, guid: 258b7fecbfcad1441b3b7ee34b27111b, type: 3}
+  m_PrefabInstance: {fileID: 4004320752324672932}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4004320752325081236 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 443696, guid: 258b7fecbfcad1441b3b7ee34b27111b, type: 3}

@@ -1,4 +1,4 @@
-public class WinCondition : PickUp
+public class WinConditionTrigger : PickUp
 {
     protected override void PickUpAction(Player player)
     {

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1356895192}
   - component: {fileID: 1356895191}
   m_Layer: 0
-  m_Name: WinCondition
+  m_Name: WinConditionTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

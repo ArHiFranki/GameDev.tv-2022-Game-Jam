@@ -19,6 +19,9 @@ public class PlayerMoveController : MonoBehaviour
     private float defaultMinHeightValue;
     private float defaultMaxWidthValue;
     private float defaultMinWidthValue;
+    private float defaultMoveAnimationSpeed;
+    private bool isEndOfTheGame;
+    private bool enableMove;
     private const string moveAnimationSpeedValue = "moveSpeed";
 
     public float MaxHeight => maxHeight;
@@ -32,11 +35,17 @@ public class PlayerMoveController : MonoBehaviour
         defaultMinHeightValue = minHeight;
         defaultMaxWidthValue = maxWidth;
         defaultMinWidthValue = minWidth;
+        defaultMoveAnimationSpeed = 1f;
+        isEndOfTheGame = false;
+        enableMove = true;
     }
 
     private void Update()
     {
-        PlayerMove();
+        if (enableMove)
+        {
+            PlayerMove();
+        }
     }
 
     public void SetMoveInput(Vector2 moveInput)
@@ -53,7 +62,15 @@ public class PlayerMoveController : MonoBehaviour
         newPosition.x = Mathf.Clamp(newPosition.x, minWidth, maxWidth);
         newPosition.y = Mathf.Clamp(newPosition.y, minHeight, maxHeight);
 
-        SetMoveSpeedAnimation();
+        if (!isEndOfTheGame)
+        {
+            SetMoveSpeedAnimation();
+        }
+        else
+        {
+            SetMoveSpeedAnimationEndGame();
+        }
+        
         transform.position = newPosition;
     }
 
@@ -65,7 +82,27 @@ public class PlayerMoveController : MonoBehaviour
         }
         else if (newPosition.x == oldPosition.x)
         {
+            playerAnimator.SetFloat(moveAnimationSpeedValue, defaultMoveAnimationSpeed);
+        }
+        else
+        {
+            playerAnimator.SetFloat(moveAnimationSpeedValue, moveForwardAnimationSpeed);
+        }
+    }
+
+    private void SetMoveSpeedAnimationEndGame()
+    {
+        if (newPosition.x < oldPosition.x)
+        {
+            playerAnimator.SetFloat(moveAnimationSpeedValue, moveBackwardAnimationSpeed);
+        }
+        else if (newPosition.y < oldPosition.y || newPosition.y > oldPosition.y)
+        {
             playerAnimator.SetFloat(moveAnimationSpeedValue, 1f);
+        }
+        else if (newPosition.x == oldPosition.x)
+        {
+            playerAnimator.SetFloat(moveAnimationSpeedValue, defaultMoveAnimationSpeed);
         }
         else
         {
@@ -87,5 +124,17 @@ public class PlayerMoveController : MonoBehaviour
         minHeight = defaultMinHeightValue;
         maxWidth = defaultMaxWidthValue;
         minWidth = defaultMinWidthValue;
+    }
+
+    public void SetDefaultMoveAnimationSpeed(float speedValue)
+    {
+        defaultMoveAnimationSpeed = speedValue;
+        isEndOfTheGame = true;
+    }
+
+    public void DisableMove()
+    {
+        enableMove = false;
+        playerAnimator.SetFloat(moveAnimationSpeedValue, 0f);
     }
 }

@@ -26,6 +26,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private float shootTextDelay;
     [SerializeField] private int shootTextBlinkCount;
     [SerializeField] private GameObject gameOverScreen;
+    [SerializeField] private float enterToCastleSpeed;
+    [SerializeField] private PlayerFireController playerFireController;
 
     private float tmpSpeed;
     private int tmpLevel;
@@ -37,6 +39,8 @@ public class GameController : MonoBehaviour
         player.FreezeWorld += OnFreezeWorld;
         player.PickUpShotgunInHell += OnPickUpShotgunInHell;
         player.GameOver += OnGameOver;
+        player.PlayerEnterCastleTrigger += OnPlayerEnterCastleTrigger;
+        player.PlayerWin += OnPlayerWin;
     }
 
     private void OnDisable()
@@ -45,6 +49,8 @@ public class GameController : MonoBehaviour
         player.FreezeWorld -= OnFreezeWorld;
         player.PickUpShotgunInHell -= OnPickUpShotgunInHell;
         player.GameOver -= OnGameOver;
+        player.PlayerEnterCastleTrigger -= OnPlayerEnterCastleTrigger;
+        player.PlayerWin -= OnPlayerWin;
     }
 
     private void OnPlayerDied()
@@ -113,5 +119,18 @@ public class GameController : MonoBehaviour
     {
         hellSpawner.GetComponent<Spawner>().SetSpawnCondition(false);
         gameOverScreen.SetActive(true);
+    }
+
+    private void OnPlayerEnterCastleTrigger()
+    {
+        player.TurnOffPowerUp();
+        speedController.SetCurrentSpeed(enterToCastleSpeed);
+    }
+
+    private void OnPlayerWin()
+    {
+        Debug.Log("YOU WIN!!!");
+        playerMoveController.DisableMove();
+        playerFireController.DisableFire();
     }
 }

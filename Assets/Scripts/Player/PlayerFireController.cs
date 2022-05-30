@@ -14,6 +14,7 @@ public class PlayerFireController : MonoBehaviour
     private float timeAfterLastShoot;
     private float tmpAngle;
     private Player player;
+    private bool enableFire;
 
     private const string fireAnimationTrigger = "Fire";
 
@@ -25,6 +26,7 @@ public class PlayerFireController : MonoBehaviour
     private void Start()
     {
         timeAfterLastShoot = 0;
+        enableFire = true;
     }
 
     private void Update()
@@ -34,7 +36,7 @@ public class PlayerFireController : MonoBehaviour
 
     public void Fire()
     {
-        if (player.HasWeapon && timeAfterLastShoot >= fireRate)
+        if (player.HasWeapon && timeAfterLastShoot >= fireRate && enableFire)
         {
             tmpAngle = firePoint.rotation.eulerAngles.z - firstBulletRotation;
             Instantiate(bulletPrefab, firePoint.position, Quaternion.Euler(0f, 0f, tmpAngle));
@@ -50,5 +52,10 @@ public class PlayerFireController : MonoBehaviour
             fireFX.Play();
             player.ReduceAmmo();
         }
+    }
+
+    public void DisableFire()
+    {
+        enableFire = false;
     }
 }

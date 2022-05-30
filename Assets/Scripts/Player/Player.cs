@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     [SerializeField] private SoundController soundController;
     [SerializeField] private SpawnObject middleShotgunPrefab;
     [SerializeField] private SpawnObject lavaPitPrefab;
+    [SerializeField] private SpawnObject castlePrefab;
     [SerializeField] private SpeedController speedController;
 
     private const string powerUpAnimationTrigger = "isPowerUp";
@@ -45,6 +46,8 @@ public class Player : MonoBehaviour
     public event UnityAction FreezeWorld;
     public event UnityAction PickUpShotgunInHell;
     public event UnityAction GameOver;
+    public event UnityAction PlayerEnterCastleTrigger;
+    public event UnityAction PlayerWin;
 
     private void Awake()
     {
@@ -64,11 +67,7 @@ public class Player : MonoBehaviour
         // ToDo: проверить работу условия, выделить в отдельный метод
         if (isPowerUp && (Time.time >= endPowerUpTime))
         {
-            isPowerUp = false;
-            PowerUpStatusChanged?.Invoke();
-            playerAnimator.SetBool(powerUpAnimationTrigger, false);
-            playerAnimator.SetFloat(moveAnimationSpeed, 1f);
-            powerUpWindFX.Stop();
+            TurnOffPowerUp();
         }
     }
 
@@ -171,11 +170,6 @@ public class Player : MonoBehaviour
         soundController.PlayPowerUpSound();
     }
 
-    public void SetWinCondition()
-    {
-        Debug.Log("You Win!");
-    }
-
     public void EnableWeapon()
     {
         hasWeapon = true;
@@ -201,6 +195,14 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void SpawnCastle()
+    {
+        Debug.Log("Spawn Castle Trigger");
+        SpawnObject spawned = Instantiate(castlePrefab);
+        spawned.GetComponent<Castle>().InitSpeedController(speedController);
+        PlayerEnterCastleTrigger?.Invoke();
+    }
+
     public void SpawnLavaPit()
     {
         Debug.Log("Spawn Die Trigger");
@@ -222,5 +224,19 @@ public class Player : MonoBehaviour
     public void PickUpshotgunInHellEventTrigger()
     {
         PickUpShotgunInHell?.Invoke();
+    }
+
+    public void TurnOffPowerUp()
+    {
+        isPowerUp = false;
+        PowerUpStatusChanged?.Invoke();
+        playerAnimator.SetBool(powerUpAnimationTrigger, false);
+        playerAnimator.SetFloat(moveAnimationSpeed, 1f);
+        powerUpWindFX.Stop();
+    }
+
+    public void TriggerWinEvent()
+    {
+        PlayerWin?.Invoke();
     }
 }

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameController : MonoBehaviour
 {
@@ -28,6 +30,10 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject gameOverScreen;
     [SerializeField] private float enterToCastleSpeed;
     [SerializeField] private PlayerFireController playerFireController;
+    [SerializeField] private GameObject WinCanvas;
+    [SerializeField] private GameObject GameCanvas;
+    [SerializeField] private ScoreKeeper scoreKeeper;
+    [SerializeField] private TMP_Text finalScoreText;
 
     private float tmpSpeed;
     private int tmpLevel;
@@ -132,5 +138,15 @@ public class GameController : MonoBehaviour
         Debug.Log("YOU WIN!!!");
         playerMoveController.DisableMove();
         playerFireController.DisableFire();
+        WinCanvas.SetActive(true);
+        GameCanvas.SetActive(false);
+        //finalScoreText.text = scoreKeeper.CoinCount.ToString();
+        StartCoroutine(displayFinalScore());
+    }
+
+    private IEnumerator displayFinalScore()
+    {
+        yield return new WaitForSeconds(0.001f);
+        finalScoreText.text = scoreKeeper.CoinCount.ToString();
     }
 }

@@ -5,6 +5,8 @@ public class ScoreKeeper : MonoBehaviour
 {
     private int coinCount;
 
+    public int CoinCount => coinCount;
+
     public event UnityAction<int> CoinChanged;
 
     public void ModifyCoinCount(int value)

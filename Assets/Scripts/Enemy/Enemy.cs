@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int reward;
     [SerializeField] private ParticleSystem dieFX;
     [SerializeField] private SpriteRenderer enemySprite;
+    [SerializeField] private SpriteRenderer enemyShadow;
     [SerializeField] private PolygonCollider2D enemyCollider;
 
     private ScoreKeeper myScoreKeeper;
@@ -48,6 +49,7 @@ public class Enemy : MonoBehaviour
     IEnumerator DieCoroutine()
     {
         enemySprite.enabled = false;
+        enemyShadow.enabled = false;
         enemyCollider.enabled = false;
         dieFX.Play();
         yield return new WaitForSeconds(dieFX.main.duration);

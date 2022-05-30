@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(PlayerMoveController))]
 public class Player : MonoBehaviour
 {
     [SerializeField] private int startHealth;
@@ -29,6 +30,7 @@ public class Player : MonoBehaviour
     private bool isInHell;
     private bool isGameOver;
     private Animator playerAnimator;
+    private PlayerMoveController moveController;
     private Vector3 startPosition;
 
     public bool IsPowerUp => isPowerUp;
@@ -52,6 +54,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         playerAnimator = GetComponent<Animator>();
+        moveController = GetComponent<PlayerMoveController>();
     }
 
     private void Start()
@@ -64,7 +67,6 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // ToDo: проверить работу условия, выделить в отдельный метод
         if (isPowerUp && (Time.time >= endPowerUpTime))
         {
             TurnOffPowerUp();
@@ -133,6 +135,7 @@ public class Player : MonoBehaviour
 
     private IEnumerator PlayerDieCoroutine()
     {
+        moveController.DisableMove();
         isDead = true;
         DisableWeapon();
         AliveStatusChanged?.Invoke();

@@ -137,4 +137,10 @@ public class PlayerMoveController : MonoBehaviour
         enableMove = false;
         playerAnimator.SetFloat(moveAnimationSpeedValue, 0f);
     }
+
+    public void EnableMove()
+    {
+        enableMove = true;
+        playerAnimator.SetFloat(moveAnimationSpeedValue, 1f);
+    }
 }

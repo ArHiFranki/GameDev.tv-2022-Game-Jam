@@ -61,13 +61,15 @@ public class GameController : MonoBehaviour
 
     private void OnPlayerDied()
     {
+        firstSpawner.GetComponent<Spawner>().SetSpawnCondition(false);
+        diedCanvas.SetActive(true);
         StartCoroutine(TransmitToHell());
     }
 
     private IEnumerator TransmitToHell()
     {
+        speedController.SetCurrentSpeed(0);
         tmpLevel = firstSpawner.GetComponent<Spawner>().CurrentLevel;
-        diedCanvas.SetActive(true);
         worldCleaner.SetActive(true);
         firstSpawner.SetActive(false);
         yield return new WaitForSeconds(butTextDelay);
@@ -78,13 +80,14 @@ public class GameController : MonoBehaviour
         player.SetInitialCondition();
         player.SetHealthValue(1);
         playerMoveController.SetBorders(newMaxHeight, newMinHeight, newMaxWidth, newMinWidth);
+        playerMoveController.EnableMove();
         yield return new WaitForSeconds(transmitToHellDelay);
         diedCanvas.SetActive(false);
         hellCanvas.SetActive(true);
         hellSpawner.SetActive(true);
-        UnfreezeWorld();
         yield return new WaitForSeconds(0.1f);
         hellSpawner.GetComponent<Spawner>().SetCurrentLevel(tmpLevel - 1);
+        UnfreezeWorld();
     }
 
     private void OnFreezeWorld()
@@ -140,7 +143,6 @@ public class GameController : MonoBehaviour
         playerFireController.DisableFire();
         WinCanvas.SetActive(true);
         GameCanvas.SetActive(false);
-        //finalScoreText.text = scoreKeeper.CoinCount.ToString();
         StartCoroutine(displayFinalScore());
     }
 

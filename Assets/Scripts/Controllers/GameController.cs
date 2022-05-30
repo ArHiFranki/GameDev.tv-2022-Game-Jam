@@ -35,6 +35,18 @@ public class GameController : MonoBehaviour
     [SerializeField] private ScoreKeeper scoreKeeper;
     [SerializeField] private TMP_Text finalScoreText;
     [SerializeField] private SoundController soundController;
+    [SerializeField] private GameObject sun;
+    [SerializeField] private GameObject mountBack;
+    [SerializeField] private GameObject clouds;
+    [SerializeField] private GameObject mountFront;
+    [SerializeField] private GameObject plantsBack;
+    [SerializeField] private GameObject plantsFront;
+    [SerializeField] private Image ground;
+    [SerializeField] private Camera mainCamera;
+    [SerializeField] private Sprite hellMountBack;
+    [SerializeField] private Sprite hellMountFront;
+    [SerializeField] private Sprite hellRocksBack;
+    [SerializeField] private Sprite hellRocksFront;
 
     private float tmpSpeed;
     private int tmpLevel;
@@ -75,6 +87,7 @@ public class GameController : MonoBehaviour
         firstSpawner.SetActive(false);
         yield return new WaitForSeconds(butTextDelay);
         soundController.PlayHellBackgroundMusic();
+        SwicthEnviroment();
         butText.SetActive(true);
         worldCleaner.SetActive(false);
         yield return new WaitForSeconds(beginningTextDelay);
@@ -152,5 +165,18 @@ public class GameController : MonoBehaviour
     {
         yield return new WaitForSeconds(0.001f);
         finalScoreText.text = scoreKeeper.CoinCount.ToString();
+    }
+
+    private void SwicthEnviroment()
+    {
+        sun.SetActive(false);
+        mountBack.GetComponent<RawImage>().texture = hellMountBack.texture;
+        clouds.SetActive(false);
+        mountFront.GetComponent<RawImage>().texture = hellMountFront.texture;
+        plantsBack.GetComponent<RawImage>().texture = hellRocksBack.texture;
+        plantsFront.GetComponent<RawImage>().texture = hellRocksFront.texture;
+        //ground.color = new Color(0.8996f, 0.3265f, 0.2495f, 1f);
+        ground.color = new Color(0.4666f, 0.4823f, 0.5176f, 1f);
+        mainCamera.backgroundColor = new Color(0.1333f, 0.1372f, 0.1607f, 1f);
     }
 }

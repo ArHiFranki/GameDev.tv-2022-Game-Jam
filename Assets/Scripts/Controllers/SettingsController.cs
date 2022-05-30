@@ -12,17 +12,17 @@ public class SettingsController : MonoBehaviour
 
     private void Awake()
     {
-        int objectsCount = FindObjectsOfType<SettingsController>().Length;
+        //int objectsCount = FindObjectsOfType<SettingsController>().Length;
 
-        if (objectsCount > 1)
-        {
-            gameObject.SetActive(false);
-            Destroy(gameObject);
-        }
-        else
-        {
-            DontDestroyOnLoad(gameObject);
-        }
+        //if (objectsCount > 1)
+        //{
+        //    gameObject.SetActive(false);
+        //    Destroy(gameObject);
+        //}
+        //else
+        //{
+        //    DontDestroyOnLoad(gameObject);
+        //}
     }
 
     public void SetMusicVolume(float value)

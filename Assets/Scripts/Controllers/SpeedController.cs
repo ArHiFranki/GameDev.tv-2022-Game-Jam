@@ -15,8 +15,8 @@ public class SpeedController : MonoBehaviour
 
     public float CurrentSpeed => currentSpeed;
     public float SpeedLimit => speedLimit;
-    //public float StartSpeed => startSpeed;
-    //public float SpeedIncrement => speedIncrement;
+    public float StartSpeed => startSpeed;
+    public float SpeedIncrement => speedIncrement;
 
     public event UnityAction SpeedChange;
 

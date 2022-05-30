@@ -143,6 +143,7 @@ public class Player : MonoBehaviour
         AmmoChanged?.Invoke(currentAmmo);
         FreezeWorld?.Invoke();
         soundController.StopBackgroundMusic();
+        soundController.PlayGameOverSound();
         playerDieFX.Play();
         yield return new WaitForSeconds(playerDieFX.main.duration);
 

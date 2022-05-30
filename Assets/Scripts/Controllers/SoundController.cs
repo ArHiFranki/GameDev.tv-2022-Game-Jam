@@ -13,10 +13,12 @@ public class SoundController : MonoBehaviour
     [SerializeField] private AudioClip destroyEmenySound;
     [SerializeField] private AudioClip movementSound;
     [SerializeField] private AudioClip gameOverSound;
-    [SerializeField] private AudioClip gameThemeSound;
-    [SerializeField] private AudioClip menuThemeSound;
     [SerializeField] private AudioClip onMouseClickUISound;
     [SerializeField] private AudioClip onMouseOverUISound;
+    [SerializeField] private AudioClip gameThemeMusic;
+    [SerializeField] private AudioClip menuThemeMusic;
+    [SerializeField] private AudioClip hellThemeMusicLoop;
+    [SerializeField] private AudioClip hellThemeMusicIntro;
     [SerializeField] private SpeedController speedController;
     [SerializeField] private SettingsController settingsController;
     [SerializeField] private float pitchMin;
@@ -70,11 +72,11 @@ public class SoundController : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == menuScene)
         {
-            PlayBackgroundMusic(menuThemeSound, settingsController.MusicVolume);
+            PlayBackgroundMusic(menuThemeMusic, settingsController.MusicVolume);
         }
         else if (SceneManager.GetActiveScene().name == gameScene)
         {
-            PlayBackgroundMusic(gameThemeSound, settingsController.MusicVolume);
+            PlayBackgroundMusic(gameThemeMusic, settingsController.MusicVolume);
         }
     }
 

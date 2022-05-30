@@ -34,6 +34,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject GameCanvas;
     [SerializeField] private ScoreKeeper scoreKeeper;
     [SerializeField] private TMP_Text finalScoreText;
+    [SerializeField] private SoundController soundController;
 
     private float tmpSpeed;
     private int tmpLevel;
@@ -73,6 +74,7 @@ public class GameController : MonoBehaviour
         worldCleaner.SetActive(true);
         firstSpawner.SetActive(false);
         yield return new WaitForSeconds(butTextDelay);
+        soundController.PlayHellBackgroundMusic();
         butText.SetActive(true);
         worldCleaner.SetActive(false);
         yield return new WaitForSeconds(beginningTextDelay);

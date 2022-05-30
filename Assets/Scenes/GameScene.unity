@@ -3080,6 +3080,7 @@ MonoBehaviour:
   GameCanvas: {fileID: 1443798983}
   scoreKeeper: {fileID: 301818684}
   finalScoreText: {fileID: 339548320}
+  soundController: {fileID: 1957556605}
 --- !u!4 &777929596
 Transform:
   m_ObjectHideFlags: 0

@@ -53,6 +53,7 @@ public class SoundController : MonoBehaviour
     private float onMouseOverUIVolumeValue;
     private float pickUpShotgunSoundVolumeValue;
     private float shotgunFireSoundVolumeValue;
+    private bool enablePich;
 
     private void OnEnable()
     {
@@ -89,6 +90,7 @@ public class SoundController : MonoBehaviour
     private void Start()
     {
         EffectsVolumeCalculator();
+        enablePich = true;
     }
 
     private void PlayBackgroundMusic(AudioClip musicTheme, float volume = 0.5f)
@@ -99,14 +101,38 @@ public class SoundController : MonoBehaviour
         gameSounds.Play();
     }
 
+    public void PlayHellBackgroundMusic()
+    {
+        StartCoroutine(SwitchFromIntroToLoop());
+    }
+
+    private IEnumerator SwitchFromIntroToLoop()
+    {
+        enablePich = false;
+        gameSounds.loop = false;
+        gameSounds.clip = hellThemeMusicIntro;
+        gameSounds.volume = settingsController.MusicVolume;
+        gameSounds.Play();
+        
+        yield return new WaitForSeconds(hellThemeMusicIntro.length);
+
+        gameSounds.loop = true;
+        gameSounds.clip = hellThemeMusicLoop;
+        gameSounds.volume = settingsController.MusicVolume;
+        gameSounds.Play();
+    }
+
     private void ChangeBackgroundMusicPitch()
     {
-        float pitch;
-        float tempSpeed = speedController.CurrentSpeed - speedController.StartSpeed - speedController.SpeedIncrement;
-        float interpolationFactor = tempSpeed / speedController.SpeedLimit;
-        pitch = Mathf.Lerp(pitchMin, pitchMax, interpolationFactor);
-        gameSounds.pitch = pitch;
-        Debug.Log("Current Pitch: " + pitch);
+        if (enablePich)
+        {
+            float pitch;
+            float tempSpeed = speedController.CurrentSpeed - speedController.StartSpeed - speedController.SpeedIncrement;
+            float interpolationFactor = tempSpeed / speedController.SpeedLimit;
+            pitch = Mathf.Lerp(pitchMin, pitchMax, interpolationFactor);
+            gameSounds.pitch = pitch;
+            Debug.Log("Current Pitch: " + pitch);
+        }
     }
 
     public void EffectsVolumeCalculator()

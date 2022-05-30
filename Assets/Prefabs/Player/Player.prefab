@@ -785,12 +785,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startHealth: 3
   maxHealth: 5
+  maxAmmo: 10
   starHitFX: {fileID: 6019855453727924842}
   powerUpWindFX: {fileID: 489371905187732931}
   playerDieFX: {fileID: 4004320752309863558}
   soundController: {fileID: 0}
   middleShotgunPrefab: {fileID: 4540899603610886991, guid: 2b94bb7fd23e7494eade2ba77ea4f76d, type: 3}
   lavaPitPrefab: {fileID: 3409455733660272093, guid: 2debc2a0e3fc90c4ab96913ce75f7ad0, type: 3}
+  castlePrefab: {fileID: 7783626002116090491, guid: e1f4c1e1e10f2e443912e642d84961bc, type: 3}
   speedController: {fileID: 0}
 --- !u!114 &4220117412153557165
 MonoBehaviour:

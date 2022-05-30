@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb0039a13067650428ca8cc03887622c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicVolume: 0.5
-  effectsVolume: 0.5
-  defaultMusicVolume: 0.5
-  defaultEffectsVolume: 0.5
+  musicVolume: 0.2
+  effectsVolume: 0.2
+  defaultMusicVolume: 0.2
+  defaultEffectsVolume: 0.2

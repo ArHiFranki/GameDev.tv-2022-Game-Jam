@@ -180,6 +180,7 @@ public class Player : MonoBehaviour
         WeaponStatusChanged?.Invoke();
         currentAmmo = maxAmmo;
         AmmoChanged?.Invoke(currentAmmo);
+        soundController.PlayPickUpShotgunSound();
     }
 
     public void DisableWeapon()
@@ -197,6 +198,8 @@ public class Player : MonoBehaviour
         {
             DisableWeapon();
         }
+
+        soundController.PlayShotgunFireSound();
     }
 
     public void SpawnCastle()

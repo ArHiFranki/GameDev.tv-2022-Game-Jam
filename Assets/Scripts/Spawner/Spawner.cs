@@ -8,6 +8,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private float distanceBetweenObjects;
     [SerializeField] private SpeedController speedController;
     [SerializeField] private ScoreKeeper scoreKeeper;
+    [SerializeField] private SoundController soundController;
     [SerializeField] private List<Transform> spawnPoints;
     [SerializeField] private List<WaveConfigSO> waveConfigs;
 
@@ -65,6 +66,7 @@ public class Spawner : MonoBehaviour
                 if (spawned.TryGetComponent(out Enemy enemy))
                 {
                     enemy.InitScoreKeeper(scoreKeeper);
+                    enemy.InitSoundController(soundController);
                 }
 
                 if (spawned.TryGetComponent(out Coin coin))

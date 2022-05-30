@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private PolygonCollider2D enemyCollider;
 
     private ScoreKeeper myScoreKeeper;
+    private SoundController mySoundController;
     private bool isRewardReceived = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -51,6 +52,7 @@ public class Enemy : MonoBehaviour
         enemySprite.enabled = false;
         enemyShadow.enabled = false;
         enemyCollider.enabled = false;
+        mySoundController.PlayDestroyEnemySound();
         dieFX.Play();
         yield return new WaitForSeconds(dieFX.main.duration);
         Die();
@@ -65,5 +67,10 @@ public class Enemy : MonoBehaviour
     public void InitScoreKeeper(ScoreKeeper scoreKeeper)
     {
         myScoreKeeper = scoreKeeper;
+    }
+
+    public void InitSoundController(SoundController soundController)
+    {
+        mySoundController = soundController;
     }
 }

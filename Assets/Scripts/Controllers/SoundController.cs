@@ -19,6 +19,8 @@ public class SoundController : MonoBehaviour
     [SerializeField] private AudioClip menuThemeMusic;
     [SerializeField] private AudioClip hellThemeMusicLoop;
     [SerializeField] private AudioClip hellThemeMusicIntro;
+    [SerializeField] private AudioClip pickUpShotgunSound;
+    [SerializeField] private AudioClip shotgunFireSound;
     [SerializeField] private SpeedController speedController;
     [SerializeField] private SettingsController settingsController;
     [SerializeField] private float pitchMin;
@@ -33,6 +35,8 @@ public class SoundController : MonoBehaviour
     [SerializeField] private float gameOverVolume;
     [SerializeField] private float onMouseClickUIVolume;
     [SerializeField] private float onMouseOverUIVolume;
+    [SerializeField] private float pickUpShotgunSoundVolume;
+    [SerializeField] private float shotgunFireSoundVolume;
 
     private AudioSource gameSounds;
     private const string menuScene = "MenuScene";
@@ -47,6 +51,8 @@ public class SoundController : MonoBehaviour
     private float gameOverVolumeValue;
     private float onMouseClickUIVolumeValue;
     private float onMouseOverUIVolumeValue;
+    private float pickUpShotgunSoundVolumeValue;
+    private float shotgunFireSoundVolumeValue;
 
     private void OnEnable()
     {
@@ -119,6 +125,8 @@ public class SoundController : MonoBehaviour
         gameOverVolumeValue = (gameOverVolume / settingsController.MusicVolume) * settingsController.EffectsVolume;
         onMouseClickUIVolumeValue = (onMouseClickUIVolume / settingsController.MusicVolume) * settingsController.EffectsVolume;
         onMouseOverUIVolumeValue = (onMouseOverUIVolume / settingsController.MusicVolume) * settingsController.EffectsVolume;
+        pickUpShotgunSoundVolumeValue = (pickUpShotgunSoundVolume / settingsController.MusicVolume) * settingsController.EffectsVolume;
+        shotgunFireSoundVolumeValue = (shotgunFireSoundVolume / settingsController.MusicVolume) * settingsController.EffectsVolume;
     }
 
     public void PlayCoinUpSound()
@@ -165,6 +173,16 @@ public class SoundController : MonoBehaviour
     public void PlayOnMouseOverUISound()
     {
         gameSounds.PlayOneShot(onMouseOverUISound, onMouseOverUIVolumeValue);
+    }
+
+    public void PlayPickUpShotgunSound()
+    {
+        gameSounds.PlayOneShot(pickUpShotgunSound, pickUpShotgunSoundVolumeValue);
+    }
+
+    public void PlayShotgunFireSound()
+    {
+        gameSounds.PlayOneShot(shotgunFireSound, shotgunFireSoundVolumeValue);
     }
 
     public void StopBackgroundMusic()

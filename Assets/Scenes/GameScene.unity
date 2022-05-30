@@ -3529,6 +3529,7 @@ MonoBehaviour:
   distanceBetweenObjects: 5.5
   speedController: {fileID: 862243458}
   scoreKeeper: {fileID: 301818684}
+  soundController: {fileID: 1957556605}
   spawnPoints:
   - {fileID: 29128517}
   - {fileID: 1556290903}
@@ -4067,6 +4068,7 @@ MonoBehaviour:
   distanceBetweenObjects: 5.5
   speedController: {fileID: 862243458}
   scoreKeeper: {fileID: 301818684}
+  soundController: {fileID: 1957556605}
   spawnPoints:
   - {fileID: 1025793399}
   - {fileID: 654317592}
@@ -5955,6 +5957,8 @@ MonoBehaviour:
   menuThemeMusic: {fileID: 8300000, guid: 6125e36a68af2db4cbbb9c718889dc27, type: 3}
   hellThemeMusicLoop: {fileID: 8300000, guid: fa9d82475c167764ebf49f52d3676ed0, type: 3}
   hellThemeMusicIntro: {fileID: 8300000, guid: 7cabc2218a4fe97459e81a31785b0e34, type: 3}
+  pickUpShotgunSound: {fileID: 8300000, guid: ad2cf3208f2a22e4993bc721a763c884, type: 3}
+  shotgunFireSound: {fileID: 8300000, guid: efebc2f50fb524945af745ec54ab2917, type: 3}
   speedController: {fileID: 862243458}
   settingsController: {fileID: 2579611769622779109}
   pitchMin: 1
@@ -5964,11 +5968,13 @@ MonoBehaviour:
   powerUpVolume: 1
   healthUpVolume: 1
   takeDamageVolume: 1
-  destroyEnemyVolume: 0.65
+  destroyEnemyVolume: 0.45
   movementVolume: 0.4
   gameOverVolume: 0.6
   onMouseClickUIVolume: 1
   onMouseOverUIVolume: 1
+  pickUpShotgunSoundVolume: 1
+  shotgunFireSoundVolume: 0.35
 --- !u!82 &1957556606
 AudioSource:
   m_ObjectHideFlags: 0

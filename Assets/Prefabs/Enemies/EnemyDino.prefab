@@ -331,7 +331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  enemyHealth: 2
+  enemyHealth: 1
   reward: 3
   dieFX: {fileID: 7557059188827610865}
   enemySprite: {fileID: 7557059188686821482}

@@ -3277,13 +3277,16 @@ MonoBehaviour:
   waveConfigs:
   - {fileID: 11400000, guid: 404c53e44eb74ec45ac6c7416135c1a3, type: 2}
   - {fileID: 11400000, guid: 3ca43f2fac3e04745bfc6f8ccfbc2171, type: 2}
-  - {fileID: 11400000, guid: 66c12deea66219a478a092660c84f3b4, type: 2}
-  - {fileID: 11400000, guid: f9f4bd7cc5e1500499ad93054773ced1, type: 2}
-  - {fileID: 11400000, guid: cfbd6682a74997d46b7ff43ca2953541, type: 2}
-  - {fileID: 11400000, guid: 13872ddfa150a8c4e9d386891211a50d, type: 2}
-  - {fileID: 11400000, guid: c32aa4dabcc5e8246b75a0933a685f0a, type: 2}
-  - {fileID: 11400000, guid: 66c12deea66219a478a092660c84f3b4, type: 2}
-  - {fileID: 11400000, guid: 66c12deea66219a478a092660c84f3b4, type: 2}
+  - {fileID: 11400000, guid: 1937862537876bd419bf093dae5ea7dc, type: 2}
+  - {fileID: 11400000, guid: d4dba772250e2d941b9604413500b97a, type: 2}
+  - {fileID: 11400000, guid: 53ae4234912596c40aab6ef3fdbe8d44, type: 2}
+  - {fileID: 11400000, guid: 4584b7ea84de64d4a94bae8b295ece92, type: 2}
+  - {fileID: 11400000, guid: feada3b0f097ffe4aabb4aeda1f0cd0b, type: 2}
+  - {fileID: 11400000, guid: c7e3a9d558dd0e64bb7d9656ad9f1656, type: 2}
+  - {fileID: 11400000, guid: ba6521c1765a0ba4c86f173f2879eba9, type: 2}
+  - {fileID: 11400000, guid: 75d669c47de717f4d87874388f8e36ce, type: 2}
+  - {fileID: 11400000, guid: 04f1aee6886775c46b36368688ee0e51, type: 2}
+  - {fileID: 11400000, guid: 59402e1d29791eb41be034b6a65b815a, type: 2}
   - {fileID: 11400000, guid: 8822d353bf2aea041a7c8fa5ef25854a, type: 2}
 --- !u!4 &1031539659
 Transform:
@@ -3814,13 +3817,13 @@ MonoBehaviour:
   - {fileID: 654317592}
   - {fileID: 294249936}
   waveConfigs:
-  - {fileID: 11400000, guid: df4cb0e68e8e7c34ebd3be9822a5a6d6, type: 2}
-  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
-  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
-  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
-  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
-  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
-  - {fileID: 11400000, guid: 97cd893587648294895ce2b32523b7c2, type: 2}
+  - {fileID: 11400000, guid: 05f49b4144e1241439f03117cae96e8c, type: 2}
+  - {fileID: 11400000, guid: d0f691ed4cb12e04d85a359d4ad3aa14, type: 2}
+  - {fileID: 11400000, guid: 05031bde1a8afce4c81b65b1592fbfe7, type: 2}
+  - {fileID: 11400000, guid: 1f7c13a027b85e04cac2398cb62c6622, type: 2}
+  - {fileID: 11400000, guid: 5a15862673bacfa4db1fcb2e002cab4f, type: 2}
+  - {fileID: 11400000, guid: 1e40c976e036ce049a85dd6d11b3f876, type: 2}
+  - {fileID: 11400000, guid: b1738f8463fa2b1489f31f0f36620109, type: 2}
 --- !u!1 &1337773121
 GameObject:
   m_ObjectHideFlags: 0
@@ -6293,14 +6296,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2455229629015369379, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
-      propertyPath: maxAmmo
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2455229629015369379, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
-      propertyPath: castlePrefab
-      value: 
-      objectReference: {fileID: 7783626002116090491, guid: e1f4c1e1e10f2e443912e642d84961bc, type: 3}
-    - target: {fileID: 2455229629015369379, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
       propertyPath: soundController
       value: 
       objectReference: {fileID: 1957556605}
@@ -6308,10 +6303,6 @@ PrefabInstance:
       propertyPath: speedController
       value: 
       objectReference: {fileID: 862243458}
-    - target: {fileID: 6028723171029707847, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
-      propertyPath: soundController
-      value: 
-      objectReference: {fileID: 1957556605}
     - target: {fileID: 7266401478958753153, guid: afdb7f78992f8db40aba5c2cdf1c805d, type: 3}
       propertyPath: m_RootOrder
       value: 1

@@ -10,8 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5638d438578ff744a84d1662b7d8dfc1, type: 3}
-  m_Name: Wave 1
+  m_Name: Hell Wave 2
   m_EditorClassIdentifier: 
   subWaves:
+  - objectPrefab: {fileID: -6710382592911700119, guid: 558b32ee47d082844b9dce6dc0576606, type: 3}
+    objectCount: 1
+  - objectPrefab: {fileID: -8741734520417635944, guid: 5dbef708740b23544a546dc1d856680a, type: 3}
+    objectCount: 3
   - objectPrefab: {fileID: 7557059188686821481, guid: 7db36ef8b00bf7b4094c544e0581acd1, type: 3}
-    objectCount: 2
+    objectCount: 4
+  - objectPrefab: {fileID: -3447639235382033774, guid: 17196a9dcf483c64faa91548b96ec8da, type: 3}
+    objectCount: 4

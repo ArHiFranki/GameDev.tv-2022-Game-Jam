@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5638d438578ff744a84d1662b7d8dfc1, type: 3}
-  m_Name: HellDelay Wave
+  m_Name: Normal Wave 2
   m_EditorClassIdentifier: 
   subWaves:
-  - objectPrefab: {fileID: 92029402494484914, guid: 451829521c8a6e849bf2a0d5930e94f8, type: 3}
-    objectCount: 6
+  - objectPrefab: {fileID: -8741734520417635944, guid: 5dbef708740b23544a546dc1d856680a, type: 3}
+    objectCount: 3
+  - objectPrefab: {fileID: -3447639235382033774, guid: 17196a9dcf483c64faa91548b96ec8da, type: 3}
+    objectCount: 5

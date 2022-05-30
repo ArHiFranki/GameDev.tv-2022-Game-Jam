@@ -101,7 +101,7 @@ public class GameController : MonoBehaviour
         hellCanvas.SetActive(true);
         hellSpawner.SetActive(true);
         yield return new WaitForSeconds(0.1f);
-        hellSpawner.GetComponent<Spawner>().SetCurrentLevel(tmpLevel - 1);
+        hellSpawner.GetComponent<Spawner>().SetCurrentLevel(tmpLevel - 3);
         UnfreezeWorld();
     }
 

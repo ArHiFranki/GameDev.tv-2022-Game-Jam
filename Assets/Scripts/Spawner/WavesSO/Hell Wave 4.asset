@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5638d438578ff744a84d1662b7d8dfc1, type: 3}
+  m_Name: Hell Wave 4
+  m_EditorClassIdentifier: 
+  subWaves:
+  - objectPrefab: {fileID: 4107746839509905581, guid: b4340b9d831458e42a4612352bfcd87f, type: 3}
+    objectCount: 1
+  - objectPrefab: {fileID: -8741734520417635944, guid: 5dbef708740b23544a546dc1d856680a, type: 3}
+    objectCount: 3
+  - objectPrefab: {fileID: 7557059188686821481, guid: 7db36ef8b00bf7b4094c544e0581acd1, type: 3}
+    objectCount: 8
+  - objectPrefab: {fileID: -3447639235382033774, guid: 17196a9dcf483c64faa91548b96ec8da, type: 3}
+    objectCount: 4

@@ -22,4 +22,4 @@ MonoBehaviour:
   - objectPrefab: {fileID: -6710382592911700119, guid: 558b32ee47d082844b9dce6dc0576606, type: 3}
     objectCount: 1
   - objectPrefab: {fileID: -3447639235382033774, guid: 17196a9dcf483c64faa91548b96ec8da, type: 3}
-    objectCount: 4
+    objectCount: 3

@@ -93,7 +93,7 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(beginningTextDelay);
         beginningText.SetActive(true);
         player.SetInitialCondition();
-        player.SetHealthValue(1);
+        //player.SetHealthValue(1);
         playerMoveController.SetBorders(newMaxHeight, newMinHeight, newMaxWidth, newMinWidth);
         playerMoveController.EnableMove();
         yield return new WaitForSeconds(transmitToHellDelay);

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   subWaves:
   - objectPrefab: {fileID: -3447639235382033774, guid: 17196a9dcf483c64faa91548b96ec8da, type: 3}
-    objectCount: 5
+    objectCount: 6
   - objectPrefab: {fileID: 7557059188686821481, guid: 7db36ef8b00bf7b4094c544e0581acd1, type: 3}
-    objectCount: 5
+    objectCount: 4
